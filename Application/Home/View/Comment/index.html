@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+        消息中心 - my log
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- My CSS-->
+    <link href="__PUBLIC__/css/log.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <include file="Public/include/navbar.html"/>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">消息中心</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="cb-select-all" autocomplete="off">
+                                    </th>
+                                    <th>作者</th>
+                                    <th>评论</th>
+                                    <th>状态</th>
+                                    <th>回复至</th>
+                                    <th>提交时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <foreach name="comments" item="comment">
+                                    <tr id="comment-{$comment['comment_id']}">
+                                        <td><input type="checkbox" id="cb-select-{$comment['comment_id']}"
+                                                   name="cb-select-list" autocomplete="off"></td>
+                                        <td>{$comment['user']}</td>
+                                        <td>
+                                            <if condition="mb_strlen($comment['content'],'utf8') gt 12">
+                                                {$comment['content']|mb_substr=0,12,'utf-8'}...
+                                                <else/>
+                                                {$comment['content']}
+                                            </if>
+                                        </td>
+                                        <td>
+                                            <if condition="$comment['comment_parent'] eq 0">
+                                                评论了
+                                                <else/>
+                                                回复给
+                                            </if>
+                                            <if condition="$comment['comment_respond'] eq session('user')">
+                                                你
+                                                <else/>
+                                                <span style="color: #007b3a;">{$comment['comment_respond']}</span>
+                                            </if>
+                                            <if condition="$comment['comment_pushed'] eq 2">
+                                                <span style="color: #f00">新</span>
+                                            </if>
+                                        </td>
+                                        <td>
+                                            <if condition="mb_strlen($comment['title'],'utf8') gt 12">
+                                                {$comment['title']|mb_substr=0,12,'utf-8'}...
+                                                <else/>
+                                                {$comment['title']}
+                                            </if>
+                                        </td>
+                                        <td>{$comment['comment_date']|strtotime|date='m-d H:i',###}</td>
+                                        <td>
+                                            <span class="fa fa-search"></span>
+                                            <a href="__ROOT__/Home/Index/detail/p/{$comment['id']}/comment/{$comment['comment_id']}#comment-{$comment['comment_id']}">查看</a>
+                                            <span class="fa fa-times"></span>
+                                            <a href="__ROOT__/Home/Comment/remove/comment_id/{$comment['comment_id']}">删除</a>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                        <div class="page">
+                            <div>
+                                <button class="btn btn-default btn-cb-select">全选/取消全选</button>
+                                <button class="btn btn-default btn-cb-mark">标为已读</button>
+                                <button class="btn btn-default btn-cb-remove">删除</button>
+                            </div>
+                            {$page}
+                        </div>
+                    </div>
+                    <!-- /.panel-body --> </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<include file="Public/include/loading.html"/>
+
+<!-- jQuery -->
+<script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 全选/反选
+        $(".btn-cb-select").click(function () {
+            $("#cb-select-all").click();
+        });
+        $("#cb-select-all").click(function () {
+            $("input[name='cb-select-list']").prop("checked", $(this).is(':checked'));
+        });
+
+
+        // 标为已读
+        $(".btn-cb-mark").click(function () {
+            handler("read");
+        });
+
+        // 删除
+        $(".btn-cb-remove").click(function () {
+            handler("remove");
+        });
+
+        /**
+         * 处理消息
+         * @param status
+         */
+        function handler(status) {
+            var marks = "";
+            $("input[name='cb-select-list']:checked").each(function () {
+                marks += $(this).attr("id").split("-")[2] + ",";
+            });
+            marks = marks.substring(0, marks.length - 1);
+            if (marks == "")return;
+
+            $("#loadDiv").show();
+            $.ajax({
+                url: "__ROOT__/Home/Comment/batch",
+                type: "post",
+                data: {
+                    marks: marks,
+                    status: status
+                },
+                success: function (result) {
+                    if (result > 0) window.location.reload();
+                    else {
+                        $("#loadDiv").hide();
+                        alert(result);
+                    }
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,2615 @@
+[ 2016-08-29T19:23:04+08:00 ] 36.63.213.249 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-08-29T19:23:22+08:00 ] 36.63.213.249 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-08-29T19:23:31+08:00 ] 36.63.213.249 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+ERR: SQLSTATE[28000] [1045] Access denied for user 'qdm20382310'@'localhost' (using password: YES)
+
+[ 2016-08-29T19:25:02+08:00 ] 36.63.213.249 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+ERR: SQLSTATE[HY000] [1130] Host '139.129.142.179' is not allowed to connect to this MySQL server
+
+[ 2016-08-29T19:26:13+08:00 ] 101.226.33.220 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2016-08-29T19:28:01+08:00 ] 36.63.213.249 /log/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001156s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000386s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2016-08-29T19:28:06+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0069s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-08-29T19:28:09+08:00 ] 36.63.213.249 /log/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2016-08-29T19:28:15+08:00 ] 36.63.213.249 /log/Home/User/checkLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `log_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_user` WHERE `user` = 'xiaomo'  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001116s ]
+
+[ 2016-08-29T19:28:15+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012824s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012887s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2016-08-29T19:28:27+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011509s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000918s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2016-08-29T19:28:32+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 134 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 160 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 166 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 177 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010644s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010690s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000746s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000796s ]
+
+[ 2016-08-29T19:31:07+08:00 ] 140.207.185.111 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012345s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+
+[ 2016-08-29T19:31:09+08:00 ] 180.153.214.200 /log/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2016-08-29T19:31:35+08:00 ] 180.153.206.22 /log/Home/Index/index/author/xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000992s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001073s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000206s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-08-29T19:31:38+08:00 ] 101.226.66.177 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+
+[ 2016-08-29T19:35:22+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013114s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2016-08-29T19:35:34+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000302s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-08-29T20:51:17+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0052s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010820s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-08-29T20:51:19+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011688s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000910s ]
+
+[ 2016-08-29T20:51:23+08:00 ] 36.63.213.249 /log/Home/Index/index/author/aaa/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aaa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2016-08-29T20:51:54+08:00 ] 36.63.213.249 /log/Home/Index/index/author/aaa/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aaa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000844s ]
+
+[ 2016-08-29T20:52:09+08:00 ] 36.63.213.249 /log/Home/Index/index/author/aaa/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aaa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2016-08-29T20:52:17+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000983s ]
+
+[ 2016-08-29T20:52:21+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2016-08-29T20:52:26+08:00 ] 36.63.213.249 /log/Home/Index/index/author/aa/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011094s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011152s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2016-08-29T20:54:19+08:00 ] 180.153.214.190 /log/Home/Index/index/author/xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012289s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2016-08-29T20:54:30+08:00 ] 180.153.214.191 /log/Home/Index/index/author/aaa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aaa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011039s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2016-08-29T20:55:33+08:00 ] 101.226.66.173 /log/Home/Index/index/author/aa
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013734s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000709s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000767s ]
+
+[ 2016-08-29T20:57:05+08:00 ] 36.63.213.249 /log/Home/Index/index?author=xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011604s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2016-08-29T20:57:18+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 134 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 160 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 166 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 177 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2016-08-29T20:57:37+08:00 ] 36.63.213.249 /log/Home/Post/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011577s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011634s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2016-08-29T21:00:11+08:00 ] 101.226.89.123 /log/Home/Index/index?author=xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014235s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000840s ]
+
+[ 2016-08-29T21:00:17+08:00 ] 180.153.163.190 /log/Home/Index/index?author=xiaomo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000853s ]
+
+[ 2016-08-29T21:00:46+08:00 ] 180.153.211.172 /log/Home/Post/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2016-08-29T21:24:24+08:00 ] 36.63.213.249 /log/Home/index/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+ERR: 非法操作:edit
+
+[ 2016-08-29T21:24:31+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011253s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-08-29T21:24:33+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 134 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 160 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 166 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 177 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010273s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-08-29T21:24:37+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000758s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-08-29T21:24:39+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010443s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-08-29T21:24:46+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2016-08-29T21:25:16+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010921s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-08-29T21:25:19+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011144s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011206s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2016-08-29T21:27:23+08:00 ] 101.226.89.117 /log/Home/index/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+ERR: 非法操作:edit
+
+[ 2016-08-29T21:27:39+08:00 ] 112.65.193.14 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+
+[ 2016-08-29T21:27:43+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2016-08-29T21:27:52+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010933s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010994s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2016-08-29T21:27:56+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012353s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000965s ]
+
+[ 2016-08-29T21:30:58+08:00 ] 101.226.33.227 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011120s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2016-08-29T21:31:27+08:00 ] 119.147.146.192 /log/Home/index/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+ERR: 非法操作:edit
+
+[ 2016-08-29T21:31:35+08:00 ] 119.147.146.192 /log/Home/index/edit?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+ERR: 非法操作:edit
+
+[ 2016-08-29T21:34:22+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012425s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000968s ]
+
+[ 2016-08-29T21:34:25+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 121 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010790s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-08-29T21:34:44+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000738s ]
+
+[ 2016-08-29T21:36:30+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010715s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001026s ]
+
+[ 2016-08-29T21:36:30+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012173s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-08-29T21:36:32+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010081s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000765s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2016-08-29T21:36:35+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010866s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2016-08-29T21:37:39+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010889s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-08-29T21:37:40+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+
+[ 2016-08-29T21:37:43+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2016-08-29T21:37:54+08:00 ] 101.226.99.196 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+
+[ 2016-08-29T21:39:11+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: INSERT INTO `log_post` (`title`,`content`,`user`,`post_date`,`edit_date`,`status`) VALUES ('新增日志测试','啦啦啦啦啦~德玛西亚~<br><img src=\"/log/Public/files/57c16fb47c0f1.jpeg\" style=\"width: 374.355px; height: 211px;\"><br><br>嘿嘿嘿<br><img src=\"/log/Public/files/57c16fec7e6ac.png\" style=\"width: 253px;\"><br><p><br></p>','xiaomo','2016-08-29 21:39:11','2016-08-29 21:39:11','1') [ RunTime:0.0067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2016-08-29T21:39:11+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010942s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011085s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2016-08-29T21:39:30+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000230s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000303s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011459s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011511s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-08-29T21:40:42+08:00 ] 180.153.214.191 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+
+[ 2016-08-29T21:40:50+08:00 ] 180.153.214.192 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+
+[ 2016-08-29T21:41:05+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012911s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000968s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001058s ]
+
+[ 2016-08-29T21:42:16+08:00 ] 101.226.51.230 /log/Home/Post/edit/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+
+[ 2016-08-29T21:58:54+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011359s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011412s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2016-08-29T21:59:08+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 134 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 160 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 166 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 177 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010612s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000702s ]
+
+[ 2016-08-29T21:59:10+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011388s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2016-08-29T21:59:11+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010746s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010807s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2016-08-29T21:59:18+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2016-08-29T21:59:30+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+NOTIC: [8] Undefined index: p /data/home/qxu1590190232/htdocs/log/Application/Home/Controller/PostController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: INSERT INTO `log_post` (`title`,`content`,`edit_date`,`user`,`post_date`,`status`) VALUES ('新增日志测试','啦啦啦啦啦~德玛西亚~<br><img src=\"/log/Public/files/57c16fb47c0f1.jpeg\" style=\"width: 374.355px; height: 211px;\"><br><br>嘿嘿嘿<br><p><br></p>','2016-08-29 21:59:30','xiaomo','2016-08-29 21:59:30','1') [ RunTime:0.0079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2016-08-29T21:59:30+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 4 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012435s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000733s ]
+
+[ 2016-08-29T21:59:34+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010728s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000718s ]
+
+[ 2016-08-29T22:01:25+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.059469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.059597s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000664s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
+
+[ 2016-08-29T22:01:28+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010441s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-08-29T22:01:30+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
+
+[ 2016-08-29T22:01:36+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000798s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `log_user` [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000760s ]
+
+[ 2016-08-29T22:02:39+08:00 ] 180.153.214.190 /log/Home/Post/edit/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+
+[ 2016-08-29T22:03:13+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `log_user` [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000992s ]
+
+[ 2016-08-29T22:03:15+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `log_user` [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000665s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-08-29T22:03:16+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010757s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000883s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001050s ]
+
+[ 2016-08-29T22:03:27+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `log_user` [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000803s ]
+
+[ 2016-08-29T22:04:12+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0016s ]
+SQL: UPDATE `log_post` SET `title`='新增日志测试',`content`='啦啦啦啦啦~德玛西亚~<br><img src=\"/log/Public/files/57c16fb47c0f1.jpeg\" style=\"width: 374.355px; height: 211px;\"><br><br>嘿嘿嘿<br><p><br></p>',`edit_date`='2016-08-29 22:04:12' WHERE `id` = 2 AND `user` = 'xiaomo' [ RunTime:0.0088s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2016-08-29T22:04:13+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010741s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2016-08-29T22:04:19+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011347s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011408s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2016-08-29T22:04:53+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011084s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000673s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-08-29T22:04:58+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 1 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011187s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011254s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000885s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2016-08-29T22:05:00+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-08-29T22:05:27+08:00 ] 36.63.213.249 /log/Home/Post/upload
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-08-29T22:05:50+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011491s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000864s ]
+
+[ 2016-08-29T22:05:52+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000821s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000878s ]
+
+[ 2016-08-29T22:05:53+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000402s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-08-29T22:06:02+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 1 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010552s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000790s ]
+
+[ 2016-08-29T22:06:04+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012197s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000697s ]
+
+[ 2016-08-29T22:06:18+08:00 ] 36.63.213.249 /log/Home/Post/upload
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-08-29T22:08:06+08:00 ] 101.226.33.203 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+
+[ 2016-08-29T22:08:18+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011214s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2016-08-29T22:08:20+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-08-29T22:08:23+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010648s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010700s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-08-29T22:08:28+08:00 ] 36.63.213.249 /log/Home/Post/upload
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2016-08-29T22:08:31+08:00 ] 36.63.213.249 /log/Home/Post/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: UPDATE `log_post` SET `title`='啊啊啊',`content`='<p>阿斯顿萨达</p><p><img src=\"/log/Public/files/57c441dce47da.png\" style=\"width: 253px;\"><br></p>',`edit_date`='2016-08-29 22:08:31' WHERE `id` = 1 AND `user` = 'xiaomo' [ RunTime:0.0089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000792s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2016-08-29T22:08:31+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000912s ]
+
+[ 2016-08-29T22:08:54+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010908s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2016-08-29T22:08:55+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000698s ]
+
+[ 2016-08-29T22:11:33+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012174s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2016-08-29T22:11:44+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 1 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000627s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-08-29T22:13:05+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 1 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2016-08-29T22:13:07+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 1 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027748s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2016-08-29T22:14:56+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0054s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000733s ]
+
+[ 2016-08-29T22:14:57+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010264s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-08-29T22:33:50+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 135 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 162 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 168 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000619s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000667s ]
+
+[ 2016-08-29T22:35:33+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000626s ]
+
+[ 2016-08-29T22:35:37+08:00 ] 36.63.213.249 /log/Home/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 10 行.
+NOTIC: [8] Undefined variable: title /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 135 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 161 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 162 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 168 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 179 行.
+NOTIC: [8] Undefined variable: status /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/ece92b4a7b3a116fa216529aa8161e97.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011964s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000730s ]
+
+[ 2016-08-29T22:35:40+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010470s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000639s ]
+
+[ 2016-08-29T22:35:41+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000672s ]
+
+[ 2016-08-29T22:35:43+08:00 ] 36.63.213.249 /log/Home/Post/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `log_post` WHERE `id` = 2 AND `user` = 'xiaomo' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-08-29T22:35:47+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011519s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2016-08-29T22:35:52+08:00 ] 36.63.213.249 /log/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0056s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 10 行.
+NOTIC: [8] Undefined variable: author /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012261s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2016-08-29T22:35:54+08:00 ] 36.63.213.249 /log/Home/Index/index/author/xiaomo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'xiaomo' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011554s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-08-29T22:35:57+08:00 ] 36.63.213.249 /log/Home/Index/index/author/aa/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `user` = 'aa' AND `status` = 1 ORDER BY post_date desc, id asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-08-29T22:36:02+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 2 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+NOTIC: [8] Undefined variable: tips /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 126 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013201s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000730s ]
+
+[ 2016-08-29T22:36:11+08:00 ] 36.63.213.249 /log/Home/Index/detail/p/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 5 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: log /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-08-29T22:36:16+08:00 ] 36.63.213.249 /log/Home/Index/detail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001212s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [8] Undefined variable: log /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010358s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2016-08-29T22:36:21+08:00 ] 36.63.213.249 /log/Home/Index/de
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+ERR: 非法操作:de
+
+[ 2016-08-29T22:39:11+08:00 ] 140.207.185.111 /log/Home/Index/detail/p/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `log_post` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`user`,`content`,`post_date` FROM `log_post` WHERE `id` = 5 AND `status` = 1 ORDER BY post_date desc, id asc LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+NOTIC: [8] Undefined variable: log /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012808s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2016-08-29T22:39:15+08:00 ] 180.153.214.200 /log/Home/Index/detail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: log /data/home/qxu1590190232/htdocs/log/Application/Runtime/Cache/Home/1223f42a89e823bf89547594651162de.php 第 10 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2016-08-29T22:39:28+08:00 ] 101.226.89.123 /log/Home/Index/de
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+ERR: 非法操作:de
+

@@ -1,0 +1,42 @@
+[ 2016-08-27T10:59:06+08:00 ] ::1 /blog/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:User
+
+[ 2016-08-27T16:04:28+08:00 ] ::1 /log/public/files/57c149316fae9-QQ%E6%88%AA%E5%9B%BE20160827155019.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-27T16:04:51+08:00 ] ::1 /log/Public/files/57c149316fae9-QQ%E6%88%AA%E5%9B%BE20160827155019.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-27T16:12:12+08:00 ] ::1 /log/Public/files/57c14b4906b96-QQ%E6%88%AA%E5%9B%BE20160827155019.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-27T16:14:05+08:00 ] ::1 /log/Public/files/57c14b4906b96-QQ%E6%88%AA%E5%9B%BE20160827155019.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-27T16:36:33+08:00 ] ::1 /log/Public/fies/57c14fe7f37e4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2016-08-27T17:59:48+08:00 ] ::1 /log/Post/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Post
+

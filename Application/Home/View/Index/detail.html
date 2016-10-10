@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+        <if condition="$log">{$log['title']}
+            <else/>
+            未找到页面
+        </if>
+        - my log
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- My CSS-->
+    <link href="__PUBLIC__/css/log.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <include file="Public/include/navbar.html"/>
+
+    <div id="page-wrapper" style="padding-top: 20px;">
+        <if condition="$tips">{// 存在表示没有内容}
+            <div class="row log">
+                <div class="col-lg-12">
+                    <div class="well well-lg" style="border-left: 8px #333 solid;padding: 3% 5%">
+                        <header><h2>{$tips}</h2></header>
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <else/>
+            <div class="row log">
+                <div class="col-lg-12">
+                    <div class="well well-lg">
+                        <article>
+                            <header><h2>{$log['title']}</h2></header>
+                            <div class="log-content">{$log['content']}</div>
+                            <footer>
+                                <span class="log-footer">
+                                    <span class="fa fa-calendar fa-fw"></span>
+                                    {$log['post_date']|strtotime|date='Y-m-d H:i',###}
+                                </span>
+                                <span class="log-footer">
+                                    <span class="fa fa-user fa-fw"></span>
+                                    <a href="__ROOT__/Home/Index/index/author/{$log['user']}/">{$log['user']}</a>
+                                </span>
+                                <if condition="$identity">
+                                    <span class="log-footer">
+                                        <span class="fa fa-pencil fa-fw"></span>
+                                        <a href="__ROOT__/Home/Post/edit/id/{$log['id']}">编辑</a>
+                                    </span>
+                                </if>
+                            </footer>
+                        </article>
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row log comments">
+                <div class="col-lg-12">
+                    <div id="comments" class="well well-lg">
+                        <if condition="$comment_title">
+                            <h2 class="comment-title">{$comment_title}</h2>
+                            {// 一级评论}
+                            <ol class="comment-list">
+                                <foreach name="comment_data" item="comment">
+                                    <article id="comment-{$comment['comment_id']}" comment="{$comment['user']}">
+                                        <footer>
+                                            <div class="comment-author">
+                                                {$comment['user']}
+                                                <span class="fa fa-user fa-fw"></span>
+                                            </div>
+                                            <span class="log-footer">
+                                                <span class="fa fa-calendar fa-fw"></span>
+                                                {$comment['comment_date']|strtotime|date='Y-m-d H:i',###}
+                                            </span>
+                                            <if condition="$identity || (session('user') && session('user') == $comment['user'])">
+                                                <span class="log-footer">
+                                                    <span class="fa fa-pencil fa-fw"></span>
+                                                    <a href="javascript:;" class='comment-remove'
+                                                       data-toggle='modal' data-target='#tipsModal'>删除</a>
+                                                </span>
+                                            </if>
+                                        </footer>
+                                        <div class="comment-content">
+                                            <p>{$comment['content']}</p>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-default btn-respond">回复</button>
+                                        </div>
+                                    </article>
+                                    <notempty name="comment['children_list']">
+                                        {// 二级评论}
+                                        <ol class="comment-list-children">
+                                            <foreach name="comment['children_list']" item="comment_children">
+                                                <li>
+                                                    <article id="comment-{$comment_children['comment_id']}"
+                                                             comment="{$comment_children['user']}">
+                                                        <footer>
+                                                            <div class="comment-author">
+                                                                {$comment_children['user']}
+                                                                <span class="fa fa-user fa-fw"></span>
+                                                                <span class="comment_author_children">回复：{$comment_children['comment_respond']}</span>
+                                                            </div>
+                                                            <span class="log-footer">
+                                                                <span class="fa fa-calendar fa-fw"></span>
+                                                                {$comment_children['comment_date']|strtotime|date='Y-m-d H:i',###}
+                                                            </span>
+                                                            <if condition="$identity || (session('user') && session('user') == $comment_children['user'])">
+                                                                <span class="log-footer">
+                                                                    <span class="fa fa-pencil fa-fw"></span>
+                                                                    <a href="javascript:;" class='comment-remove'
+                                                                       data-toggle='modal'
+                                                                       data-target='#tipsModal'>删除</a>
+                                                                </span>
+                                                            </if>
+                                                        </footer>
+                                                        <div class="comment-content">
+                                                            <p>{$comment_children['content']}</p>
+                                                        </div>
+                                                        <div>
+                                                            <button class="btn btn-default btn-respond">回复</button>
+                                                        </div>
+                                                    </article>
+                                                </li>
+                                            </foreach>
+                                        </ol>
+                                    </notempty>
+                                </foreach>
+                            </ol>
+                        </if>
+                        <div id="respond" class="comment-respond">
+                            <h2>发表评论</h2>
+
+                            <if condition="session('user')">
+                                <div class="form-group">
+                                    <label>评论</label>
+                                    <textarea class="form-control" id="comment" autocomplete="off"></textarea>
+                                </div>
+                                <button class="btn btn-default btn-cancel">取消</button>
+                                <button class="btn btn-danger btn-comment">发表评论</button>
+                                <else/>
+                                <p>尚未登录，不能进行评论。<a href="__ROOT__/Home/User/login">登录</a></p>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel -->
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </if>
+    </div>
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">提示</h4>
+            </div>
+            <div class="modal-body" id="tipsContent">
+                确认删除此条评论？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="tipsCancel">取消</button>
+                <button type="button" class="btn btn-primary" id="tipsSure">确认</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<include file="Public/include/loading.html"/>
+
+<!-- jQuery -->
+<script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
+
+<!-- Resize img JavaScript -->
+<script src="__PUBLIC__/js/resize-img.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        // 回复
+        var commentId = 0, respond = "{$log['user']}";
+        $(".btn-respond").click(function () {
+            var article = $(this).parent().parent();
+            commentId = article.attr("id").split("-")[1];
+            respond = article.attr("comment");
+            article.after($("#respond"));
+            $("#comment").focus();
+
+            // comment-list-children
+            if ($(this).parents(".comment-list-children").length > 0)
+                commentId = $(this).parents(".comment-list-children").prev("article").attr("id").split("-")[1];
+        });
+
+        // 取消
+        $(".btn-cancel").click(function () {
+            commentId = 0;
+            respond = "{$log['user']}";
+            $("#comment").val("");
+            $("#comments").append($("#respond"));
+        });
+
+        $(".btn-comment").click(function () {
+            var comment = $("#comment").val();
+            if ($.trim(comment) == "") {
+                alert("请输入评论内容");
+                return;
+            }
+
+            $("#loadDiv").show();
+            $.ajax({
+                url: "__ROOT__/Home/Comment/post",
+                type: "post",
+                data: {
+                    post: "{$log['id']}",
+                    comment: comment,
+                    comment_id: commentId,
+                    respond: respond
+                },
+                success: function (result) {
+                    var jsonObj = $.parseJSON(result);
+                    if (jsonObj.err > 0) window.location.reload();
+                    else {
+                        $("#loadDiv").hide();
+                        alert(jsonObj.message);
+                    }
+                }
+            });
+        });
+
+
+        // 删除
+        $(document).on('click', '.comment-remove', function () {
+            commentId = $(this).parent().parent().parent().attr("id").split("-")[1];
+        });
+
+        // 取消
+        $("#tipsCancel").click(function () {
+            commentId = 0;
+            respond = "{$log['user']}";
+        });
+
+        // 确定
+        $("#tipsSure").click(function () {
+            $("#loadDiv").show();
+            $.ajax({
+                url: "__ROOT__/Home/Comment/remove",
+                type: "post",
+                data: {comment_id: commentId},
+                success: function (result) {
+                    $("#tipsCancel").click();
+
+                    var jsonObj = $.parseJSON(result);
+                    if (jsonObj.err > 0) window.location.reload();
+                    else {
+                        $("#loadDiv").hide();
+                        alert(jsonObj.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

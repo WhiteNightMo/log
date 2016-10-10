@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+        日志 - my log
+    </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="__PUBLIC__/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- My CSS-->
+    <link href="__PUBLIC__/css/log.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <include file="Public/include/navbar.html"/>
+
+    <!--警告框样式开始-->
+    <div class="member-warn"></div>
+    <!--警告框样式结束-->
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">日志
+                    <a href="__ROOT__/Home/Post/add" class="btn btn-default" style="margin-left: 10px">新建</a>
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="__ROOT__/Home/Post/index"
+                            <?php echo !isset($_GET['post_status'])?'class="current"':''?>>
+                            全部<span class="count">（{$sum}）</span>
+                            </a>
+                        </li>
+                        <foreach name="counts" item="count">
+                            <switch name="count['status']">
+                                <case value="1">
+                                    <li>
+                                        <a href="__ROOT__/Home/Post/index/post_status/publish"
+                                        <?php echo $_GET['post_status']=='publish'?'class="current"':''?>>
+                                        已发布<span class="count">（{$count['total']}）</span>
+                                        </a>
+                                    </li>
+                                </case>
+                                <case value="2">
+                                    <li>
+                                        <a href="__ROOT__/Home/Post/index/post_status/draft"
+                                        <?php echo $_GET['post_status']=='draft'?'class="current"':''?>>
+                                        草稿<span class="count">（{$count['total']}）</span>
+                                        </a>
+                                    </li>
+                                </case>
+                                <case value="3">
+                                    <li>
+                                        <a href="__ROOT__/Home/Post/index/post_status/trash"
+                                        <?php echo $_GET['post_status']=='trash'?'class="current"':''?>>
+                                        回收站<span class="count">（{$count['total']}）</span>
+                                        </a>
+                                    </li>
+                                </case>
+                            </switch>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>标题</th>
+                                    <th>评论</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <foreach name="logs" item="log">
+                                    <tr id="post-{$log['id']}">
+                                        <td>{$log['post_date']|strtotime|date='Y-m-d H:i',###}</td>
+                                        <td>
+                                            <if condition="mb_strlen($log['title'],'utf8') gt 12">
+                                                {$log['title']|mb_substr=0,12,'utf-8'}...
+                                                <else/>
+                                                {$log['title']}
+                                            </if>
+                                        </td>
+                                        <td>{$log['total']}</td>
+                                        <td>
+                                            <switch name="log['status']">
+                                                <case value="1">已发布</case>
+                                                <case value="2">草稿箱</case>
+                                                <case value="3">回收站</case>
+                                            </switch>
+                                        </td>
+                                        <td>
+                                            <if condition="$log['status'] neq 3">
+                                                <span class='fa fa-pencil'></span>
+                                                <a href="__ROOT__/Home/Post/edit/id/{$log['id']}">编辑</a>
+                                                <span class='fa fa-trash'></span>
+                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/trash">移至回收站</a>
+                                                <if condition="$log['status'] eq 1">
+                                                    <span class="fa fa-search"></span>
+                                                    <a href="__ROOT__/Home/Index/detail/p/{$log['id']}">查看</a>
+                                                </if>
+                                                <else/>
+                                                <span class="fa fa-reply"></span>
+                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/untrash">还原草稿</a>
+                                                <span class="fa fa-times"></span>
+                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/delete">永久删除</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </foreach>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                        <div class="page">{$page}</div>
+                    </div>
+                    <!-- /.panel-body --> </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="__PUBLIC__/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script
+        src="__PUBLIC__/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script type="text/javascript">
+    $(document).ready(function () {
+    });
+</script>
+</body>
+</html>
