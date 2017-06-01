@@ -181,18 +181,18 @@
 
             $("#loadDiv").show();
             $.ajax({
-                url: "__ROOT__/Home/Comment/batch",
+                url: "{:U('Comment/batch')}",
                 type: "post",
                 data: {
                     marks: marks,
                     status: status
                 },
-                success: function (result) {
-                    if (result > 0) window.location.reload();
-                    else {
-                        $("#loadDiv").hide();
-                        alert(result);
-                    }
+                success: function (data) {
+                    showTips(data.info);
+                    $("#loadDiv").hide();
+
+                    if (data.status > 0)
+                        window.location.reload();
                 }
             });
         }

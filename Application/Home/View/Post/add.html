@@ -43,9 +43,6 @@
 <div id="wrapper">
     <include file="Public/include/navbar.html"/>
 
-    <!--警告框样式开始-->
-    <div class="member-warn"></div>
-    <!--警告框样式结束-->
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -118,6 +115,7 @@
 </div>
 <!-- /#wrapper -->
 
+<include file="Public/include/tips.html"/>
 <include file="Public/include/loading.html"/>
 
 <!-- jQuery -->
@@ -160,34 +158,6 @@
             }
         });
 
-        function sendFile(file, editor, $editable) {
-            $(".member-warn").show().html("图片正在上传，请稍候...");
-
-            var filename = file['name'];
-            // 以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
-            var ext = filename.substr(filename.lastIndexOf(".")).toLowerCase();
-            data = new FormData();
-            data.append("file", file);
-            data.append("ext", ext);
-            $.ajax({
-                data: data,
-                type: "post",
-                url: "__ROOT__/Home/Post/upload",
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function (url) {
-                    showTips("上传成功,请等待加载");
-                    editor.insertImage($editable, url);
-                    if (!window.addEventListener) $("input[type='file']").outerHTML("");  //IE清除inputfile
-                    else $("input[type='file']").val("");   //FF清除inputfile
-                },
-                error: function () {
-                    showTips("上传失败");
-                }
-            });
-        }
-
 
         // 发布
         $(".btn-post").click(function () {
@@ -215,7 +185,7 @@
 
             $("#loadDiv").show();
             $.ajax({
-                url: '__ROOT__/Home/Post/post',
+                url: "{:U('Post/post')}",
                 type: 'post',
                 data: {
                     p: p,
@@ -223,25 +193,44 @@
                     content: content,
                     status: status
                 },
-                success: function (result) {
-                    var jsonObj = $.parseJSON(result);
-                    if (jsonObj.err > 0) {
-                        window.location.href = "__ROOT__/Home/Post/edit/id/" + jsonObj.id;
+                success: function (data) {
+                    if (data.status > 0) {
+                        window.location.href = data.info;
                     } else {
+                        showTips(data.info);
                         $("#loadDiv").hide();
-                        alert(jsonObj.message);
                     }
                 }
             });
         }
 
 
-        // 显示2秒提示
-        function showTips(tips) {
-            $(".member-warn").show().html(tips);
-            setTimeout(function () {
-                $(".member-warn").hide();
-            }, 2000);
+        function sendFile(file, editor, $editable) {
+            $("#tipsDiv").show().children(".warn").html("图片正在上传，请稍候...");
+
+            var filename = file['name'];
+            // 以上防止在图片在编辑器内拖拽引发第二次上传导致的提示错误
+            var ext = filename.substr(filename.lastIndexOf(".")).toLowerCase();
+            data = new FormData();
+            data.append("file", file);
+            data.append("ext", ext);
+            $.ajax({
+                data: data,
+                type: "post",
+                url: "{:U('Post/upload')}",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (url) {
+                    showTips("上传成功,请等待加载");
+                    editor.insertImage($editable, url);
+                    if (!window.addEventListener) $("input[type='file']").outerHTML("");  //IE清除inputfile
+                    else $("input[type='file']").val("");   //FF清除inputfile
+                },
+                error: function () {
+                    showTips("上传失败");
+                }
+            });
         }
     });
 </script>

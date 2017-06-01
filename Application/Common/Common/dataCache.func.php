@@ -13,7 +13,7 @@
  * @param string $type 类型
  * @return bool|mixed|string
  */
-function getDataCache($user, $type)
+function get_data_cache($user, $type)
 {
     $cache_dir = "./Public/cache/";
     $archive_file = "{$type}_{$user}.txt";
@@ -36,7 +36,7 @@ function getDataCache($user, $type)
  * @param $data 存储的数据
  * @return mixed
  */
-function setDataCache($filename, $data)
+function set_data_cache($filename, $data)
 {
     $cache_dir = "./Public/cache/";
     $msg = serialize($data);
@@ -51,7 +51,7 @@ function setDataCache($filename, $data)
  * @param string $user
  * @return mixed
  */
-function setArchiveCache($user)
+function set_archive_cache($user)
 {
     $archive_file = "archive_$user.txt";
 
@@ -61,5 +61,5 @@ function setArchiveCache($user)
  GROUP BY date_format(`post_date`, '%Y%m')
  ORDER BY date_format(`post_date`, '%Y%m') DESC");
 
-    return setDataCache($archive_file, $data);
+    return set_data_cache($archive_file, $data);
 }

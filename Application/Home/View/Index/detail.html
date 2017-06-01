@@ -253,7 +253,7 @@
 
             $("#loadDiv").show();
             $.ajax({
-                url: "__ROOT__/Home/Comment/post",
+                url: "{:U('Comment/post')}",
                 type: "post",
                 data: {
                     post: "{$log['id']}",
@@ -261,12 +261,12 @@
                     comment_id: commentId,
                     respond: respond
                 },
-                success: function (result) {
-                    var jsonObj = $.parseJSON(result);
-                    if (jsonObj.err > 0) window.location.reload();
+                success: function (data) {
+                    if (data.status > 0)
+                        window.location.reload();
                     else {
+                        showTips(data.info);
                         $("#loadDiv").hide();
-                        alert(jsonObj.message);
                     }
                 }
             });

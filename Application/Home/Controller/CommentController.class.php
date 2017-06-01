@@ -1,21 +1,30 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: xiaomo
- * Date: 2016/8/30
- * Time: 10:31
+ * 消息评论管理
+ *
+ * 操作：
+ *      index：消息中心
+ *      register：注册
+ *      logout：退出
+ *
+ * 消息处理：
+ *      post：消息处理——新增评论
+ *      remove：消息处理——删除评论
+ *      batch：消息处理——批量操作
+ *
+ * @author xiaomo<xiaomo@nixiaomo.com>
  */
 
 namespace Home\Controller;
 
-
-use Think\Controller;
-
-class CommentController extends Controller
+class CommentController extends BaseController
 {
+    /**
+     * 消息中心
+     */
     public function index()
     {
-        if (!session('user')) exit('{"err": 0, "message": "请先登录再进行后续操作"}');
+        $this->checkLogged();
 
         $m = M('comment');
         // 回复我或评论我的文章，且不是我自己做的
@@ -28,7 +37,7 @@ class CommentController extends Controller
 
         // 获取评论信息
         $join = "RIGHT JOIN log_post ON log_comment.post_id = log_post.id";
-        $page = getPage($m, $where, 10, $join); // 分页
+        $page = init_page($m, $where, 10, $join); // 分页
         $comments = $m->field("id,title,log_comment.*")->join($join)->where($where)
             ->order("comment_pushed desc, comment_date desc, comment_id desc")
             ->limit($page->firstRow . ',' . $page->listRows)->select();
@@ -39,12 +48,12 @@ class CommentController extends Controller
         $this->display('index');
     }
 
-    /*
-     * 新增评论
+    /**
+     * 消息处理——新增评论
      */
     public function post()
     {
-        if (!session('user')) exit('{"err": 0, "message": "请先登录再进行后续操作"}');
+        $this->checkLogged();
 
         $data['user'] = session('user');
         $data['comment_respond'] = $_POST['respond'];
@@ -58,20 +67,33 @@ class CommentController extends Controller
 //        $insertId = $m->getLastInsID(); // 获取insert id
 
         // 响应
-        if ($result > 0) echo '{"err": 1, "message": "操作成功"}';
-        else echo '{"err": 0, "message": "操作失败！"}';
+        if ($result > 0) {
+            $ajaxData['status'] = 1;
+            $ajaxData['info'] = '操作成功';
+
+        } else {
+            $ajaxData['status'] = 0;
+            $ajaxData['info'] = '操作失败！';
+        }
+        $this->ajaxReturn($ajaxData, 'JSON');
     }
 
 
-    /*
-     * 删除评论
+    /**
+     * 消息处理——删除评论
      */
     public function remove()
     {
-        if (!session('user')) exit('{"err": 0, "message": "请先登录再进行后续操作"}');
-        if (!isset($_REQUEST['comment_id']) || intval($_REQUEST['comment_id']) == 0) exit('{"err": 0, "message": "参数有误"}');
+        $this->checkLogged();
 
-        $comment_id = intval($_REQUEST['comment_id']);
+        $comment_id = I('request.comment_id/d');
+        // 参数验证
+        $ajaxData['status'] = 0;
+        if (empty($comment_id)) {
+            $ajaxData['info'] = '参数有误';
+            $this->ajaxReturn($ajaxData, 'JSON');
+        }
+
         $userWhere['comment_respond|user'] = session('user');
         $where['comment_id|comment_parent'] = $comment_id;
         $where['_logic'] = 'or';
@@ -79,38 +101,60 @@ class CommentController extends Controller
 
         // 响应
         if (isset($_POST['comment_id'])) {  // post，Index/detail
-            if ($result > 0) echo '{"err": 1, "message": "操作成功"}';
-            else echo '{"err": 0, "message": "操作失败！"}';
+            if ($result > 0) {
+                $ajaxData['status'] = 1;
+                $ajaxData['info'] = '操作成功';
+
+            } else {
+                $ajaxData['status'] = 0;
+                $ajaxData['info'] = '操作失败！';
+            }
+            $this->ajaxReturn($ajaxData, 'JSON');
 
         } else {    // get，Comment/index
             $this->redirect('Comment/index');
         }
     }
 
-    /*
-     * 批量操作
+
+    /**
+     * 消息处理——批量操作
      */
     public function batch()
     {
-        if (!session('user')) exit('{"err": 0, "message": "请先登录再进行后续操作"}');
-        if (!isset($_POST['marks']) || !isset($_POST['status'])) exit("参数有误");
+        $this->checkLogged();
+        $marks = I('post.marks/d');
+        $status = I('post.status/d');
+        // 参数验证
+        $ajaxData['status'] = 0;
+        if (empty($marks) || empty($status)) {
+            $ajaxData['info'] = '参数有误';
+            $this->ajaxReturn($ajaxData, 'JSON');
+        }
 
-        $marks = $_POST['marks'];
-        $status = $_POST['status'];
+
         if ($status == "read") {    // 标记为已读
-            $sql = "UPDATE log_comment SET comment_pushed = CASE comment_id ";
+            $sql = "UPDATE `log_comment` SET `comment_pushed` = CASE `comment_id` ";
             foreach (explode(",", $marks) as $id) {
                 $sql .= sprintf("WHEN %d THEN %d ", $id, 1);
             }
-            $sql .= "END WHERE comment_id IN ($marks)";
-            echo M("comment")->execute($sql);
+            $sql .= "END WHERE `comment_id` IN ($marks)";
+
+            $ajaxData['status'] = M("comment")->execute($sql);
+            $ajaxData['info'] = '已标记为已读';
 
         } else if ($status == "remove") {   // 批量删除
             $userWhere['comment_respond|user'] = session('user');
             $where['comment_id|comment_parent'] = array('in', $marks);
             $where['_logic'] = 'or';
-            echo M("comment")->where($where)->delete();
 
-        } else exit("参数有误");
+            $ajaxData['status'] = M("comment")->where($where)->delete();
+            $ajaxData['info'] = '删除成功';
+
+        } else {
+            $ajaxData['info'] = '参数有误';
+        }
+
+        $this->ajaxReturn($ajaxData, 'JSON');
     }
 }

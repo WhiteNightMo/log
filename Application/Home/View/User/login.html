@@ -66,6 +66,9 @@
     </div>
 </div>
 
+<include file="Public/include/tips.html"/>
+<include file="Public/include/loading.html"/>
+
 <!-- jQuery -->
 <script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -90,20 +93,23 @@
                 alert("请填写完整");
                 return;
             }
+            $("#loadDiv").show();
 
             $.ajax({
-                url: "__ROOT__/Home/User/checkLogin",
+                url: "{:U('User/check_login')}",
                 type: "post",
                 data: {
                     user: user,
                     psw: $.md5(psw),
                     remember: $("input[type='checkbox']").is(':checked')
                 },
-                success: function (result) {
-                    var jsonObj = $.parseJSON(result);
-                    if (jsonObj.err > 0) {
-                        window.location.href = jsonObj.redirect_to;
-                    } else alert(jsonObj.message);
+                success: function (data) {
+                    if (data.status > 0) {
+                        window.location.href = data.redirect_to;
+                    } else {
+                        showTips(data.info);
+                    }
+                    $("#loadDiv").hide();
                 }
             });
         });
