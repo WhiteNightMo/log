@@ -58,7 +58,7 @@
                     <div class="well well-lg">
                         <article>
                             <header>
-                                <h2><a href="__ROOT__/Home/Index/detail/p/{$log['id']}">{$log['title']}</a></h2>
+                                <h2><a href="{:U('Index/detail')}?p={$log['id']}">{$log['title']}</a></h2>
                             </header>
                             <div class="log-content">{$log['content']}</div>
                             <footer>
@@ -68,14 +68,14 @@
                                 </span>
                                 <span class="log-footer">
                                     <span class="fa fa-user fa-fw"></span>
-                                    <a href="__ROOT__/Home/Index/index/author/{$log['user']}/">{$log['user']}</a>
+                                    <a href="{:U('Index/index')}?author={$log['user']}/">{$log['user']}</a>
                                 </span>
                                 <span class="log-footer">
                                     <span class="fa fa-comment fa-fw"></span>
                                     <if condition="$log['total'] gt 0">
-                                        <a href="__ROOT__/Home/Index/detail/p/{$log['id']}/#comments">有{$log['total']}条评论</a>
+                                        <a href="{:U('Index/detail')}?p={$log['id']}/#comments">有{$log['total']}条评论</a>
                                         <else/>
-                                        <a href="__ROOT__/Home/Index/detail/p/{$log['id']}/#respond">留下评论</a>
+                                        <a href="{:U('Index/detail')}?p={$log['id']}/#respond">留下评论</a>
                                     </if>
                                 </span>
                             </footer>
