@@ -26,7 +26,7 @@
                     <if condition="$count gt 0">
                         <volist name="messages" id="message" offset="0" length="5">
                             <li>
-                                <a href="__ROOT__/Home/Index/detail/p/{$message['post_id']}/comment/{$message['comment_id']}#comment-{$message['comment_id']}">
+                                <a href="{:U('Index/detail')}?p={$message['post_id']}&comment={$message['comment_id']}#comment-{$message['comment_id']}">
                                     <div>
                                         <span class="pushed-user">{$message['user']}</span>
                                         <if condition="$message['comment_parent'] eq 0">
@@ -59,7 +59,7 @@
                         <li class="divider"></li>
                     </if>
                     <li>
-                        <a class="text-center" href="__ROOT__/Home/Comment/index">
+                        <a class="text-center" href="{:U('Comment/index')}">
                             <strong>查看所有消息</strong>
                             <i class="fa fa-angle-right"></i>
                         </a>
