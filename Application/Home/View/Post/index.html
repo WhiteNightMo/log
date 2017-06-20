@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">日志
-                    <a href="__ROOT__/Home/Post/add" class="btn btn-default" style="margin-left: 10px">新建</a>
+                    <a href="{:U('Post/add')}" class="btn btn-default" style="margin-left: 10px">新建</a>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -57,7 +57,7 @@
                 <div>
                     <ul class="list-inline">
                         <li>
-                            <a href="__ROOT__/Home/Post/index"
+                            <a href="{:U('Post/index')}"
                             <?php echo !isset($_GET['post_status'])?'class="current"':''?>>
                             全部<span class="count">（{$sum}）</span>
                             </a>
@@ -66,7 +66,7 @@
                             <switch name="count['status']">
                                 <case value="1">
                                     <li>
-                                        <a href="__ROOT__/Home/Post/index/post_status/publish"
+                                        <a href="{:U('Post/index')}?post_status=publish"
                                         <?php echo $_GET['post_status']=='publish'?'class="current"':''?>>
                                         已发布<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -74,7 +74,7 @@
                                 </case>
                                 <case value="2">
                                     <li>
-                                        <a href="__ROOT__/Home/Post/index/post_status/draft"
+                                        <a href="{:U('Post/index')}?post_status=draft"
                                         <?php echo $_GET['post_status']=='draft'?'class="current"':''?>>
                                         草稿<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -82,7 +82,7 @@
                                 </case>
                                 <case value="3">
                                     <li>
-                                        <a href="__ROOT__/Home/Post/index/post_status/trash"
+                                        <a href="{:U('Post/index')}?post_status=trash"
                                         <?php echo $_GET['post_status']=='trash'?'class="current"':''?>>
                                         回收站<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -127,18 +127,18 @@
                                         <td>
                                             <if condition="$log['status'] neq 3">
                                                 <span class='fa fa-pencil'></span>
-                                                <a href="__ROOT__/Home/Post/edit/id/{$log['id']}">编辑</a>
+                                                <a href="{:U('Post/edit')}?id={$log['id']}">编辑</a>
                                                 <span class='fa fa-trash'></span>
-                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/trash">移至回收站</a>
+                                                <a href="{:U('Post/trash')}?p={$log['id']}&action=trash">移至回收站</a>
                                                 <if condition="$log['status'] eq 1">
                                                     <span class="fa fa-search"></span>
-                                                    <a href="__ROOT__/Home/Index/detail/p/{$log['id']}">查看</a>
+                                                    <a href="{:U('Index/detail')}?p={$log['id']}">查看</a>
                                                 </if>
                                                 <else/>
                                                 <span class="fa fa-reply"></span>
-                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/untrash">还原草稿</a>
+                                                <a href="{:U('Post/trash')}?p={$log['id']}&action=untrash">还原草稿</a>
                                                 <span class="fa fa-times"></span>
-                                                <a href="__ROOT__/Home/Post/trash/p/{$log['id']}/action/delete">永久删除</a>
+                                                <a href="{:U('Post/trash')}?p={$log['id']}&action=delete">永久删除</a>
                                             </if>
                                         </td>
                                     </tr>

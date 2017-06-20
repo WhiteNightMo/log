@@ -291,14 +291,14 @@
                 url: "{:U('Comment/remove')}",
                 type: "post",
                 data: {comment_id: commentId},
-                success: function (result) {
+                success: function (data) {
                     $("#tipsCancel").click();
 
-                    var jsonObj = $.parseJSON(result);
-                    if (jsonObj.err > 0) window.location.reload();
+                    if (data.status > 0)
+                        window.location.reload();
                     else {
                         $("#loadDiv").hide();
-                        alert(jsonObj.message);
+                        alert(data.info);
                     }
                 }
             });
