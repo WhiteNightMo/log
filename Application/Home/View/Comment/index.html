@@ -101,9 +101,9 @@
                                         <td>{$comment['comment_date']|strtotime|date='m-d H:i',###}</td>
                                         <td>
                                             <span class="fa fa-search"></span>
-                                            <a href="__ROOT__/Home/Index/detail/p/{$comment['id']}/comment/{$comment['comment_id']}#comment-{$comment['comment_id']}">查看</a>
+                                            <a href="{:U('Index/detail')}?p={$comment['id']}&comment={$comment['comment_id']}#comment-{$comment['comment_id']}">查看</a>
                                             <span class="fa fa-times"></span>
-                                            <a href="__ROOT__/Home/Comment/remove/comment_id/{$comment['comment_id']}">删除</a>
+                                            <a href="{:U('Comment/remove')}?comment_id={$comment['comment_id']}">删除</a>
                                         </td>
                                     </tr>
                                 </foreach>

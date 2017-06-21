@@ -25,4 +25,12 @@ return array(
     'DB_PWD' => 'mysqlmysql',          // 密码
     'DB_PORT' => '3306',        // 端口
     'DB_PREFIX' => 'log_',    // 数据库表前缀
+
+
+    /* 路由 */
+    'URL_ROUTER_ON'   => true,  // 开启路由
+    'URL_ROUTE_RULES'=>array(
+        'author/:author' => array('Index/index'),
+        'p/:p' => array('Index/detail'),
+    ),
 );

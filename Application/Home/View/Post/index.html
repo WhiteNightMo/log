@@ -132,7 +132,7 @@
                                                 <a href="{:U('Post/trash')}?p={$log['id']}&action=trash">移至回收站</a>
                                                 <if condition="$log['status'] eq 1">
                                                     <span class="fa fa-search"></span>
-                                                    <a href="{:U('Index/detail')}?p={$log['id']}">查看</a>
+                                                    <a href="__ROOT__/p/{$log['id']}">查看</a>
                                                 </if>
                                                 <else/>
                                                 <span class="fa fa-reply"></span>
