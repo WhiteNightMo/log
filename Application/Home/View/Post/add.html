@@ -221,11 +221,18 @@
                 cache: false,
                 contentType: false,
                 processData: false,
-                success: function (url) {
-                    showTips("上传成功,请等待加载");
-                    editor.insertImage($editable, url);
-                    if (!window.addEventListener) $("input[type='file']").outerHTML("");  //IE清除inputfile
-                    else $("input[type='file']").val("");   //FF清除inputfile
+                success: function (data) {
+                    if (data.status > 0) {
+                        showTips("上传成功,请等待加载");
+                        editor.insertImage($editable, "__PUBLIC__/files/" + data.info);
+                    } else {
+                        showTips(data.info);
+                    }
+
+                    if (!window.addEventListener)
+                        $("input[type='file']").outerHTML("");  //IE清除inputfile
+                    else
+                        $("input[type='file']").val("");   //FF清除inputfile
                 },
                 error: function () {
                     showTips("上传失败");
