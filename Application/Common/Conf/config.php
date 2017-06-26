@@ -9,6 +9,9 @@ return array(
     'DEFAULT_MODULE' => 'Home', // 默认模块Home
 //    'MODULE_Allow_LIST' => array('Home'),   // 允许模块组，可增，以逗号为隔
 
+    /* 项目配置 */
+    'PROJECT_NAME' => 'my log',    // 项目名
+
 
     /* 加载扩展文件*/
     'LOAD_EXT_FILE' => 'dataCache.func',

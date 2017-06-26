@@ -7,11 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>
-        <if condition="$author">{$author}
-            <else/>
-            首页
-        </if>
-        - my log
+        <notempty name="author">
+            {$author} -
+        </notempty>
+        my log
     </title>
 
     <!-- Bootstrap Core CSS -->
