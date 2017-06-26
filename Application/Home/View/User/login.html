@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>login - my log</title>
+    <title>登录 - {$Think.config.PROJECT_NAME}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,6 +22,9 @@
 
     <!-- Custom Fonts -->
     <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- My CSS-->
+    <link href="__PUBLIC__/css/log.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,8 +69,7 @@
     </div>
 </div>
 
-<include file="Public/include/tips.html"/>
-<include file="Public/include/loading.html"/>
+<include file="Public:tips,Public:loading"/>
 
 <!-- jQuery -->
 <script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
