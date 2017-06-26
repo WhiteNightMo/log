@@ -21,7 +21,7 @@ function get_data_cache($user, $type)
     $file = $cache_dir . $archive_file;
     $msg = file_get_contents($file);
     if (empty($msg)) {  // 为空则从数据库读取
-        $method = "set{$type}Cache";
+        $method = "set_{$type}_cache";
         $msg = $method($user);
         return $msg;
     }
