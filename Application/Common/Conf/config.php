@@ -9,6 +9,11 @@ return array(
     'DEFAULT_MODULE' => 'Home', // 默认模块Home
 //    'MODULE_Allow_LIST' => array('Home'),   // 允许模块组，可增，以逗号为隔
 
+
+    // 定义公共错误模板
+    'TMPL_EXCEPTION_FILE' => APP_PATH . '/../Public/404.html',
+
+
     /* 项目配置 */
     'PROJECT_NAME' => 'my log',    // 项目名
 
@@ -28,8 +33,8 @@ return array(
 
 
     /* 路由 */
-    'URL_ROUTER_ON'   => true,  // 开启路由
-    'URL_ROUTE_RULES'=>array(
+    'URL_ROUTER_ON' => true,  // 开启路由
+    'URL_ROUTE_RULES' => array(
         'author/:author' => array('Index/index'),
         'p/:p' => array('Index/detail'),
     ),
