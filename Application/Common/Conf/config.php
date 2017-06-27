@@ -35,7 +35,8 @@ return array(
     /* 路由 */
     'URL_ROUTER_ON' => true,  // 开启路由
     'URL_ROUTE_RULES' => array(
-        'author/:author' => array('Index/index'),
-        'p/:p' => array('Index/detail'),
+        'p/:p\d$' => array('Index/detail'),
+        'author/:author$' => array('Index/index'),
+        'author/:author/archive/:archive\d$' => array('Index/index'),
     ),
 );

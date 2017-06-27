@@ -1,9 +1,9 @@
 <extend name="Public:base"/>
 <block name="title">
     <empty name="title">
-        编辑
-        <else/>
         新建
+        <else/>
+        编辑
     </empty>
 </block>
 <block name="css">
@@ -16,10 +16,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    <if condition="$title">编辑日志
-                        <else/>
+                    <empty name="title">
                         撰写新日志
-                    </if>
+                        <else/>
+                        编辑日志
+                    </empty>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->

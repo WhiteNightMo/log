@@ -161,7 +161,7 @@
                             <if condition="$archiveCache">
                                 <foreach name="archiveCache" item="archiveItem">
                                     <li>
-                                        <a href="{:U('Index/index')}?author={$Think.session.user}&archive={$archiveItem['month']}">
+                                        <a href="__ROOT__/author/{$Think.session.user}/archive/{$archiveItem['month']}">
                                             {$archiveItem['month']}({$archiveItem['count']})
                                         </a>
                                     </li>
