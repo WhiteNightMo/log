@@ -1,4 +1,5 @@
 /.idea
+favicon.ico
 Application/Runtime/Cache/Home/*.php
 Application/Runtime/Logs/Common/*.log
 Application/Runtime/Logs/Home/*.log
