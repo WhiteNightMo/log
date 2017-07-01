@@ -7,7 +7,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="__ROOT__/index.html">{$Think.config.PROJECT_NAME}</a>
+        <a class="navbar-brand" href="__ROOT__/index.html">
+            <img class="navbar-logo" src="__PUBLIC__/images/logo.png"/>{$Think.config.PROJECT_NAME}</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -158,12 +159,13 @@
                         </a>
                         <ul class="nav nav-second-level">
                             <php>
-                                $archiveCache = get_data_cache($_GET['author']?$_GET['author']:session('user'),'archive');
+                                $user = $_GET['author']?$_GET['author']:session('user');
+                                $archiveCache = get_data_cache($user,'archive');
                             </php>
                             <if condition="$archiveCache">
                                 <foreach name="archiveCache" item="archiveItem">
                                     <li>
-                                        <a href="__ROOT__/author/{$Think.session.user}/archive/{$archiveItem['month']}">
+                                        <a href="__ROOT__/author/{$user}/archive/{$archiveItem['month']}">
                                             {$archiveItem['month']}({$archiveItem['count']})
                                         </a>
                                     </li>
