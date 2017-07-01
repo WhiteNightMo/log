@@ -1,14 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: xiaomo
- * Date: 2016/9/8
- * Time: 10:09
+ * 自定义扩展文件——数据缓存
+ *
+ * get_data_cache：读取数据缓存
+ * set_data_cache：设置数据缓存
+ * set_archive_cache：设置归档缓存
+ *
+ * @author xiaomo<xiaomo@nixiaomo.com>
  */
 
 
 /**
  * 读取数据缓存
+ *
  * @param string $user 用户名
  * @param string $type 类型
  * @return bool|mixed|string
@@ -32,6 +36,7 @@ function get_data_cache($user, $type)
 
 /**
  * 设置数据缓存
+ *
  * @param string $filename 文件名
  * @param $data 存储的数据
  * @return mixed
@@ -48,6 +53,7 @@ function set_data_cache($filename, $data)
 
 /**
  * 设置归档缓存
+ *
  * @param string $user
  * @return mixed
  */
@@ -56,7 +62,8 @@ function set_archive_cache($user)
     $archive_file = "archive_$user.txt";
 
     // 201608,2
-    $data = M("post")->query("SELECT date_format(`post_date`, '%Y%m') AS month, count(*) AS count FROM `log_post`
+    $data = M("post")
+        ->query("SELECT date_format(`post_date`, '%Y%m') AS month, count(*) AS count FROM `log_post`
  WHERE `user` = '$user' AND `status` = 1
  GROUP BY date_format(`post_date`, '%Y%m')
  ORDER BY date_format(`post_date`, '%Y%m') DESC");

@@ -181,9 +181,9 @@
                     success: function (data) {
                         if (data.status > 0) {
                             showTips("上传成功,请等待加载");
-                            editor.insertImage($editable, "__PUBLIC__/files/" + data.info);
+                            editor.insertImage($editable, data.msg);
                         } else {
-                            showTips(data.info);
+                            showTips(data.msg);
                         }
 
                         if (!window.addEventListener)
