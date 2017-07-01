@@ -162,11 +162,12 @@
                                 $user = $_GET['author']?$_GET['author']:session('user');
                                 $archiveCache = get_data_cache($user,'archive');
                             </php>
-                            <if condition="$archiveCache">
+                            <notempty name="archiveCache">
                                 <foreach name="archiveCache" item="archiveItem">
                                     <li>
                                         <a href="__ROOT__/author/{$user}/archive/{$archiveItem['month']}">
-                                            {$archiveItem['month']}({$archiveItem['count']})
+                                            {:date('Y年m月', strtotime($archiveItem['month'] . '01'))}
+                                            ({$archiveItem['count']})
                                         </a>
                                     </li>
                                 </foreach>
@@ -174,7 +175,7 @@
                                 <li>
                                     <a href="#">暂无日志</a>
                                 </li>
-                            </if>
+                            </notempty>
                         </ul>
                         <!-- /.nav-third-level -->
                     </li>
