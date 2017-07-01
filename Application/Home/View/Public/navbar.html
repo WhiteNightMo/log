@@ -26,7 +26,7 @@
                     <if condition="$count gt 0">
                         <volist name="messages" id="message" offset="0" length="5">
                             <li>
-                                <a href="{:U('Index/detail')}?p={$message['post_id']}&comment={$message['comment_id']}#comment-{$message['comment_id']}">
+                                <a href="__ROOT__/p/{$message['post_id']}#comment-{$message['comment_id']}">
                                     <div>
                                         <span class="pushed-user">{$message['user']}</span>
                                         <if condition="$message['comment_parent'] eq 0">
@@ -127,13 +127,13 @@
                 </li>
                 <li>
                     <a href="__ROOT__/index.html">
-                        <i class="glyphicon glyphicon-home"></i> 首页
+                        <i class="fa fa-home"></i> 首页
                     </a>
                 </li>
                 <if condition="session('user')">
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-bookmark"></i> 个人日志
+                            <i class="fa fa-bookmark"></i> 个人日志
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
@@ -148,16 +148,18 @@
                     </li>
                     <li>
                         <a href="{:U('Comment/index')}">
-                            <i class="glyphicon glyphicon-comment"></i> 消息中心
+                            <i class="fa fa-comment"></i> 消息中心
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-inbox"></i> 归档
+                            <i class="fa fa-inbox"></i> 归档
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <php>$archiveCache = get_data_cache(session('user'),'archive');</php>
+                            <php>
+                                $archiveCache = get_data_cache($_GET['author']?$_GET['author']:session('user'),'archive');
+                            </php>
                             <if condition="$archiveCache">
                                 <foreach name="archiveCache" item="archiveItem">
                                     <li>
