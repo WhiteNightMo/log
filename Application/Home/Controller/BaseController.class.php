@@ -4,6 +4,7 @@
  *
  * 操作：
  *      checkLogged：检查是否登录
+ *      initLogged：初始化登录
  *
  * @author xiaomo<xiaomo@nixiaomo.com>
  */
@@ -15,16 +16,34 @@ use Think\Controller;
 
 class BaseController extends Controller
 {
-    public function index()
-    {
-    }
-
-
     /**
      * 检查是否登录
      */
     protected function checkLogged()
     {
-        if (!session('user')) $this->redirect('User/login');
+        if (!session('user')) {
+            $this->redirect('User/login');
+        }
+    }
+
+
+    /**
+     * 初始化登录
+     *
+     * session中存在则跳过
+     * cookie中存在则获取
+     * 需要登录则跳转
+     *
+     * @param bool $jump 是否跳转
+     */
+    protected function initLogged($jump = true)
+    {
+        if (!session('user')) {
+            if (cookie('login')) {  // 从cookie中读取用户名
+                session("user", explode('|', cookie('login'))[0]);
+            } else if ($jump) { // 跳转登录
+                $this->redirect('User/login');
+            }
+        }
     }
 }

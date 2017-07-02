@@ -22,7 +22,7 @@ class CommentController extends BaseController
      */
     public function index()
     {
-        $this->checkLogged();
+        $this->initLogged();
 
         $Comment = M('comment')->alias('c');
         // 回复我或评论我的文章，且不是我自己做的
