@@ -117,9 +117,10 @@
             <ul class="nav" id="side-menu">
                 <li class="sidebar-search">
                     <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
+                        <input type="text" class="form-control input-search"
+                               value="{$Think.get.s}" placeholder="Search...">
                         <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                <button class="btn btn-default btn-search" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
@@ -186,3 +187,18 @@
     </div>
     <!-- /.navbar-static-side -->
 </nav>
+<script type="text/javascript">
+    $(".input-search").bind('keypress', function (event) {
+        if (event.keyCode == "13") {
+            $(".btn-search").click();
+        }
+    });
+    $(".btn-search").click(function () {
+        var s = $(".input-search").val();
+        if ($.trim(s) == '' || $.trim(s).length < 3) {
+            showTips('请最少输入三个有效字符');
+            return;
+        }
+        window.location.href = '__ROOT__/s/' + s;
+    });
+</script>
