@@ -41,6 +41,7 @@ return array(
     'URL_ROUTER_ON' => true,  // 开启路由
     'URL_ROUTE_RULES' => array(
         'p/:p\d$' => array('Index/detail'),
+        'p/:p\d/comment/:comment\d$' => array('Index/detail'),
         's/:s\s$' => array('Index/index'),
         'author/:author$' => array('Index/index'),
         'author/:author/archive/:archive\d$' => array('Index/index'),

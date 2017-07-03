@@ -27,7 +27,7 @@
                     <if condition="$count gt 0">
                         <volist name="messages" id="message" offset="0" length="5">
                             <li>
-                                <a href="__ROOT__/p/{$message['post_id']}#comment-{$message['comment_id']}">
+                                <a href="__ROOT__/p/{$message['post_id']}/comment/{$message['comment_id']}#comment-{$message['comment_id']}">
                                     <div>
                                         <span class="pushed-user">{$message['user']}</span>
                                         <if condition="$message['comment_parent'] eq 0">
