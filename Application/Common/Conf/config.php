@@ -32,9 +32,10 @@ return array(
     'DB_PREFIX' => 'log_',    // 数据库表前缀
 
 
-    /* cookie设置 */
-    'COOKIE_PREFIX' => 'log_', // cookie 名称前缀
-    'COOKIE_EXPIRE' => 3600 * 24 * 7, // cookie 保存时间
+    /* Cookie设置 */
+    'COOKIE_DOMAIN' => 'nixiaomo.com',  // Cookie有效域名
+    'COOKIE_PREFIX' => 'log_', // Cookie 名称前缀
+    'COOKIE_EXPIRE' => 3600 * 24 * 7, // Cookie 保存时间
 
 
     /* 路由 */
