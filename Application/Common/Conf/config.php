@@ -32,15 +32,17 @@ return array(
     'DB_PREFIX' => 'log_',    // 数据库表前缀
 
 
-    /* cookie设置 */
-    'COOKIE_PREFIX' => 'log_', // cookie 名称前缀
-    'COOKIE_EXPIRE' => 3600 * 24 * 7, // cookie 保存时间
+    /* Cookie设置 */
+    'COOKIE_DOMAIN' => 'nixiaomo.com',  // Cookie有效域名
+    'COOKIE_PREFIX' => 'log_', // Cookie 名称前缀
+    'COOKIE_EXPIRE' => 3600 * 24 * 7, // Cookie 保存时间
 
 
     /* 路由 */
     'URL_ROUTER_ON' => true,  // 开启路由
     'URL_ROUTE_RULES' => array(
         'p/:p\d$' => array('Index/detail'),
+        'p/:p\d/comment/:comment\d$' => array('Index/detail'),
         's/:s\s$' => array('Index/index'),
         'author/:author$' => array('Index/index'),
         'author/:author/archive/:archive\d$' => array('Index/index'),

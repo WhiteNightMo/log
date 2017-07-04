@@ -124,7 +124,7 @@ class CommentController extends BaseController
     {
         $this->checkLogged();
         $marks = I('post.marks/d');
-        $status = I('post.status/d');
+        $status = I('post.status');
         // 参数验证
         $ajaxData['status'] = 0;
         if (empty($marks) || empty($status)) {
