@@ -25,6 +25,12 @@
 
     <!-- My CSS-->
     <link href="__PUBLIC__/css/log.css" rel="stylesheet">
+    <style type="text/css">
+        .input-group-addon {
+            width: 100px;
+            background-size: 100% 100%;
+        }
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,9 +46,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
+            <div class="login-panel panel panel-primary">
                 <div class="panel-heading">
-                    请登录 <a href="{:U('User/register')}" style="float:right;color: #999;">免费注册</a>
+                    请登录 <a href="{:U('User/register')}" style="float:right;color: #ddd;">免费注册</a>
                 </div>
                 <div class="panel-body">
                     <form role="form">
@@ -54,13 +60,20 @@
                             <div class="form-group">
                                 <input id="psw" class="form-control" placeholder="密码" name="password" type="password">
                             </div>
+                            <div class="form-group input-group" style="width: 100%;">
+                                <input class="form-control" placeholder="验证码" name="code" type="text"
+                                       id="code" maxlength="4">
+                                <span class="input-group-addon" id="auth_span"
+                                      style="background-image: url('{:U("User/get_verify")}')">
+                                </span>
+                            </div>
                             <div class="checkbox">
                                 <label>
                                     <input name="remember" type="checkbox" value="remember"
                                            {$checked|default="" }>记住用户
                                 </label>
                             </div>
-                            <a href="javascript:;" class="btn btn-lg btn-success btn-block" id="login">登 录</a>
+                            <a href="javascript:;" class="btn btn-lg btn-primary btn-block" id="login">登 录</a>
                         </fieldset>
                     </form>
                 </div>
@@ -91,8 +104,9 @@
         $("#login").click(function () {
             var user = $("#user").val();
             var psw = $("#psw").val();
-            if ($.trim(user) == "" || $.trim(psw) == "") {
-                alert("请填写完整");
+            var code = $("#code").val();
+            if ($.trim(user) == "" || $.trim(psw) == "" || code == "") {
+                showTips("请填写完整");
                 return;
             }
             $("#loadDiv").show();
@@ -103,6 +117,7 @@
                 data: {
                     user: user,
                     psw: $.md5(psw),
+                    code: code,
                     remember: $("input[type='checkbox']").is(':checked')
                 },
                 success: function (data) {
@@ -116,11 +131,20 @@
             });
         });
 
+
         // 监听回车键事
         $(document).keypress(function (e) {
             if (e.which == 13) {
                 $("#login").click();
             }
+        });
+
+
+        // 获取验证码
+        $("#auth_span").click(function () {
+            document.getElementById('auth_span').style.backgroundImage = 'url({:U("User/get_verify")}?rand=' +
+                    Math.random() + ')';
+            $("#code").val("");
         });
     });
 </script>
