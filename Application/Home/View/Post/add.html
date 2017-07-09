@@ -139,6 +139,10 @@
                     showTips("标题和内容不能为空");
                     return;
                 }
+                if (title.length >= 64) {
+                    showTips("标题请保持在64个字符以内！");
+                    return;
+                }
 
                 $("#loadDiv").show();
                 $.ajax({

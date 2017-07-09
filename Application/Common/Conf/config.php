@@ -41,9 +41,14 @@ return array(
     /* 路由 */
     'URL_ROUTER_ON' => true,  // 开启路由
     'URL_ROUTE_RULES' => array(
+        // 文章
         'p/:p\d$' => array('Index/detail'),
         'p/:p\d/comment/:comment\d$' => array('Index/detail'),
+        // 文章管理
+        'post_status/:post_status' => array('Post/index'),
+        // 搜索
         's/:s\s$' => array('Index/index'),
+        // 作者
         'author/:author$' => array('Index/index'),
         'author/:author/archive/:archive\d$' => array('Index/index'),
     ),

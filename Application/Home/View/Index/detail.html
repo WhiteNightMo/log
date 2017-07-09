@@ -179,7 +179,7 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
         $(document).ready(function () {
-            // 回复
+            // 评论
             var commentId = 0, respond = "{$log['user']}";
             $(".btn-respond").click(function () {
                 var article = $(this).parent().parent();
@@ -192,7 +192,6 @@
                 if ($(this).parents(".comment-list-children").length > 0)
                     commentId = $(this).parents(".comment-list-children").prev("article").attr("id").split("-")[1];
             });
-
             // 取消
             $(".btn-cancel").click(function () {
                 commentId = 0;
@@ -200,7 +199,7 @@
                 $("#comment").val("");
                 $("#comments").append($("#respond"));
             });
-
+            // 确定
             $(".btn-comment").click(function () {
                 var comment = $("#comment").val();
                 if ($.trim(comment) == "") {
@@ -230,17 +229,15 @@
             });
 
 
-            // 删除
+            // 删除评论
             $(document).on('click', '.comment-remove', function () {
                 commentId = $(this).parent().parent().parent().attr("id").split("-")[1];
             });
-
             // 取消
             $("#tipsCancel").click(function () {
                 commentId = 0;
                 respond = "{$log['user']}";
             });
-
             // 确定
             $("#tipsSure").click(function () {
                 $("#loadDiv").show();

@@ -32,7 +32,7 @@
                             <switch name="count['status']">
                                 <case value="1">
                                     <li>
-                                        <a href="{:U('Post/index')}?post_status=publish"
+                                        <a href="__ROOT__/post_status/publish"
                                            {$_GET['post_status']=='publish'?'class="current"':''}>
                                         已发布<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -40,7 +40,7 @@
                                 </case>
                                 <case value="2">
                                     <li>
-                                        <a href="{:U('Post/index')}?post_status=draft"
+                                        <a href="__ROOT__/post_status/draft"
                                            {$_GET['post_status']=='draft'?'class="current"':''}>
                                         草稿<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -48,7 +48,7 @@
                                 </case>
                                 <case value="3">
                                     <li>
-                                        <a href="{:U('Post/index')}?post_status=trash"
+                                        <a href="__ROOT__/post_status/trash"
                                            {$_GET['post_status']=='trash'?'class="current"':''}>
                                         回收站<span class="count">（{$count['total']}）</span>
                                         </a>

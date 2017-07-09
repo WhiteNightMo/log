@@ -54,8 +54,8 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input id="user" class="form-control" placeholder="用户名" name="username" type="text"
-                                       autofocus>
+                                <input id="user" class="form-control" placeholder="用户名（^\w{5,16}$）"
+                                       name="username" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 <input id="psw" class="form-control" placeholder="密码" name="password" type="password"
@@ -105,22 +105,29 @@
                 showTips("请填写完整");
                 return;
             }
-            $("#loadDiv").show();
+            if (/^\w{5,16}$/.test(user) === false) {
+                showTips("用户名格式有误！");
+                return;
+            }
 
+            $("#loadDiv").show();
             $.ajax({
                 url: "{:U('User/check_register')}",
                 type: "post",
                 data: {
                     user: user,
                     psw: $.md5(psw),
-                    code: code,
+                    code: code
                 },
                 success: function (data) {
+                    $("#loadDiv").hide();
+                    showTips(data.info);
+
                     if (data.status > 0) {
                         window.location.href = "{:U('User/login')}";
+                    } else {
+                        $("#auth_span").click();
                     }
-                    showTips(data.info);
-                    $("#loadDiv").hide();
                 }
             });
         });

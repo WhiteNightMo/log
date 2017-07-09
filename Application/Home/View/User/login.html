@@ -70,7 +70,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input name="remember" type="checkbox" value="remember"
-                                           {$checked|default="" }>记住用户
+                                           {$checked|default="" }>记住7天
                                 </label>
                             </div>
                             <a href="javascript:;" class="btn btn-lg btn-primary btn-block" id="login">登 录</a>
@@ -121,12 +121,14 @@
                     remember: $("input[type='checkbox']").is(':checked')
                 },
                 success: function (data) {
+                    $("#loadDiv").hide();
+                    showTips(data.info);
+
                     if (data.status > 0) {
                         window.location.href = data.redirect_to;
                     } else {
-                        showTips(data.info);
+                        $("#auth_span").click();
                     }
-                    $("#loadDiv").hide();
                 }
             });
         });
