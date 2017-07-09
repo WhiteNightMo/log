@@ -35,7 +35,7 @@
                                     <tr id="comment-{$comment['comment_id']}">
                                         <td><input type="checkbox" id="cb-select-{$comment['comment_id']}"
                                                    name="cb-select-list" autocomplete="off"></td>
-                                        <td>{$comment['user']}</td>
+                                        <td>{$comment['comment_author']}</td>
                                         <td>
                                             <if condition="mb_strlen($comment['content'],'utf8') gt 12">
                                                 {$comment['content']|mb_substr=0,12,'utf-8'}...
