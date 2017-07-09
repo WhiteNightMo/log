@@ -3,18 +3,18 @@
     <empty name="author">
         welcome
         <else/>
-        {$author}
+        {$titleBar}
     </empty>
 </block>
 <block name="css"></block>
 
 <block name="main">
     <div id="page-wrapper" style="padding-top: 20px;">
-        <if condition="$author">{// 存在表示没有内容或查看指定作者的日志}
+        <if condition="$titleBar">{// 存在表示没有内容或查看指定作者的日志}
             <div class="row log">
                 <div class="col-lg-12">
                     <div class="well well-lg" style="border-left: 8px #333 solid;padding: 3% 5%;">
-                        <header><h2>{$author}</h2></header>
+                        <header><h2>{$titleBar}</h2></header>
                     </div>
                     <!-- /.panel -->
                 </div>
@@ -37,7 +37,7 @@
                                 </span>
                                 <span class="log-footer">
                                     <span class="fa fa-user fa-fw"></span>
-                                    <a href="__ROOT__/author/{$log['user']}">{$log['user']}</a>
+                                    <a href="__ROOT__/author/{$log['user']}">{$log['nickname']}</a>
                                 </span>
                                 <span class="log-footer">
                                     <span class="fa fa-comment fa-fw"></span>

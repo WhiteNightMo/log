@@ -25,22 +25,27 @@ class CommentController extends BaseController
         $this->initLogged();
 
         $Comment = M('comment')->alias('c');
-        // 回复我或评论我的文章，且不是我自己做的
-        $userWhere['comment_respond'] = session('user');
-        $userWhere['p.user'] = session('user');
-        $userWhere['_logic'] = "or";
-        $where['_complex'] = $userWhere;    // 复合查询
+        $userId = session('user_id');
+        // 自己文章的一级评论
+        $cWhere['p.user_id'] = $userId; // 自己发布的文章
+        $cWhere['c.comment_parent'] = 0;  // 一级评论
+        // 我的一级评论的二级回复
+        $parentWhere['_complex'] = $cWhere;
+        $parentWhere['c_parent.user_id'] = array('eq', $userId);    // 父评论者是自己
+        $parentWhere['_logic'] = "or";
+        $where['_complex'] = $parentWhere;    // 复合查询
         $where['p.status'] = 1;
-        $where['c.user'] = array('neq', session('user'));
+        $where['c.user_id'] = array('neq', $userId);
 
         // 获取评论信息
-        $join = "RIGHT JOIN __POST__ p ON c.post_id = p.id";
+        $join = "LEFT JOIN __COMMENT__ c_parent ON c.comment_parent = c_parent.comment_id";
+        $join .= " RIGHT JOIN __POST__ p ON c.post_id = p.id";
         $page = init_page($Comment, $where, 10, $join); // 分页
         $comments = $Comment
-            ->field("id,title,c.*")
+            ->field("id,title,c.comment_id,c.comment_author,c.comment_date,c.content,c.comment_parent,c.comment_pushed")
             ->join($join)
             ->where($where)
-            ->order("comment_pushed desc, comment_date desc, comment_id desc")
+            ->order("c.comment_pushed desc, c.comment_date desc, c.comment_id desc")
             ->limit($page->firstRow . ',' . $page->listRows)
             ->select();
 
@@ -100,7 +105,7 @@ class CommentController extends BaseController
         $result = M("comment")->where($where)->delete();
 
         // 响应
-        if (empty(I('post.comment_id/d'))) {  // post，Index/detail
+        if (!empty(I('post.comment_id/d'))) {  // post，Index/detail
             if ($result > 0) {
                 $ajaxData['status'] = 1;
                 $ajaxData['info'] = '操作成功';

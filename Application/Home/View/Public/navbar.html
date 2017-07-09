@@ -15,7 +15,7 @@
     <ul class="nav navbar-top-links navbar-right">
         <if condition="session('user')">
             <li class="dropdown">
-                <php>$messages = pushed_comment(session('user'));</php>
+                <php>$messages = pushed_comment();</php>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-bell fa-fw"></i>
                     <if condition="($count = count($messages)) gt 0">
@@ -29,7 +29,7 @@
                             <li>
                                 <a href="__ROOT__/p/{$message['post_id']}/comment/{$message['comment_id']}#comment-{$message['comment_id']}">
                                     <div>
-                                        <span class="pushed-user">{$message['user']}</span>
+                                        <span class="pushed-user">{$message['comment_author']}</span>
                                         <if condition="$message['comment_parent'] eq 0">
                                             评论了
                                             <else/>

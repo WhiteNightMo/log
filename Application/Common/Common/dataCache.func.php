@@ -54,17 +54,17 @@ function set_data_cache($filename, $data)
 /**
  * 设置归档缓存
  *
- * @param string $user
+ * @param int $user_id
  * @return mixed
  */
-function set_archive_cache($user)
+function set_archive_cache($user_id)
 {
-    $archive_file = "archive_$user.txt";
+    $archive_file = "archive_$user_id.txt";
 
     // 201608,2
     $data = M("post")
         ->query("SELECT date_format(`post_date`, '%Y%m') AS month, count(*) AS count FROM `log_post`
- WHERE `user` = '$user' AND `status` = 1
+ WHERE `user_id` = '$user_id' AND `status` = 1
  GROUP BY date_format(`post_date`, '%Y%m')
  ORDER BY date_format(`post_date`, '%Y%m') DESC");
 

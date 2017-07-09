@@ -49,11 +49,7 @@
                                                 <else/>
                                                 回复给
                                             </if>
-                                            <if condition="$comment['comment_respond'] eq session('user')">
-                                                你
-                                                <else/>
-                                                <span style="color: #007b3a;">{$comment['comment_respond']}</span>
-                                            </if>
+                                            你
                                             <if condition="$comment['comment_pushed'] eq 2">
                                                 <span style="color: #f00">新</span>
                                             </if>
