@@ -64,8 +64,9 @@
                                         <article id="comment-{$comment['comment_id']}">
                                             <footer>
                                                 <div class="comment-author">
-                                                    {$comment['child_author']}
-                                                    <span class="fa fa-user fa-fw"></span>
+                                                    <a target="_blank" href="http://{$comment['child_url']}">
+                                                        {$comment['child_author']}
+                                                    </a>
                                                 </div>
                                                 <div class="comment-meta">
                                                     <time>
@@ -97,8 +98,9 @@
                                                         <article id="comment-{$comment_children['comment_id']}">
                                                             <footer>
                                                                 <div class="comment-author">
-                                                                    {$comment_children['child_author']}
-                                                                    <span class="fa fa-user fa-fw"></span>
+                                                                    <a target="_blank" href="http://{$comment_children['child_url']}">
+                                                                        {$comment_children['child_author']}
+                                                                    </a>
                                                                     <span class="comment_author_children">回复：{$comment_children['parent_author']}</span>
                                                                 </div>
                                                                 <div class="comment-meta">
@@ -131,22 +133,20 @@
                         <div id="respond" class="comment-respond">
                             <h2>发表评论</h2>
 
-                            <if condition="!session('user_id')">
+                            <empty name="Think.session.user_id">
                                 <div class="form-group">
                                     <label>昵称 *</label><a href="{:U('User/login')}" class="to-login">去登录</a>
                                     <input class="form-control" id="nickname" autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label>邮箱 *</label>
-                                    <input class="form-control" id="email" autocomplete="off"
-                                           placeholder="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
+                                    <input class="form-control" id="email" autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label>网址(http://)</label>
-                                    <input class="form-control" id="url" autocomplete="off"
-                                           placeholder="^([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$">
+                                    <input class="form-control" id="url" autocomplete="off">
                                 </div>
-                            </if>
+                            </empty>
                             <div class="form-group">
                                 <label>评论</label>
                                 <textarea class="form-control" id="comment" autocomplete="off"></textarea>
@@ -203,10 +203,6 @@
                 var article = $(this).closest('article');
                 commentId = article.attr("id").split("-")[1];
                 article.after($("#respond"));
-
-                // comment-list-children
-                if ($(this).parents(".comment-list-children").length > 0)
-                    commentId = $(this).parents(".comment-list-children").prev("article").attr("id").split("-")[1];
             });
             // 取消
             $(".btn-cancel").click(function () {
@@ -238,11 +234,11 @@
                         comment_id: commentId
                     },
                     success: function (data) {
+                        $("#loadDiv").hide();
+                        showTips(data.info);
+
                         if (data.status > 0) {
                             window.location.reload();
-                        } else {
-                            showTips(data.info);
-                            $("#loadDiv").hide();
                         }
                     }
                 });
@@ -268,13 +264,12 @@
                         type: "post",
                         data: {comment_id: commentId},
                         success: function (data) {
+                            $("#loadDiv").hide();
                             $("#tipsCancel").click();
+                            showTips(data.info);
 
-                            if (data.status > 0)
+                            if (data.status > 0) {
                                 window.location.reload();
-                            else {
-                                $("#loadDiv").hide();
-                                alert(data.info);
                             }
                         }
                     });

@@ -61,14 +61,12 @@ class CommentController extends BaseController
      */
     public function post()
     {
-        $this->checkLogged();
-
         $postId = I('post.post/d');
         $parentId = I('post.comment_id/d');
         $comment = I('post.comment');
         // 参数验证
         $ajaxData['status'] = 0;
-        if (empty($postId) || empty($parentId) || empty($comment)) {
+        if (empty($postId) || (empty($parentId) && $parentId != 0) || empty($comment)) {
             $ajaxData['info'] = '参数有误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
@@ -106,6 +104,7 @@ class CommentController extends BaseController
         $data['content'] = $comment;
         $data['comment_parent'] = $parentId;
 
+
         // 验证数据
         $Comment = D('comment');
         if (!$Comment->create($data)) {
@@ -141,20 +140,17 @@ class CommentController extends BaseController
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
-        $userWhere['comment_respond|user'] = session('user');
-        $where['comment_id|comment_parent'] = $comment_id;
-        $where['_logic'] = 'or';
+        // 只删除当前评论，不连带删除子评论
+        $where['comment_id'] = $comment_id;
         $result = M("comment")->where($where)->delete();
 
         // 响应
         if (!empty(I('post.comment_id/d'))) {  // post，Index/detail
-            if ($result > 0) {
-                $ajaxData['status'] = 1;
-                $ajaxData['info'] = '操作成功';
-
+            if (!$result) {
+                $ajaxData['info'] = $result;
             } else {
-                $ajaxData['status'] = 0;
-                $ajaxData['info'] = '操作失败！';
+                $ajaxData['status'] = 1;
+                $ajaxData['info'] = '删除成功！';
             }
             $this->ajaxReturn($ajaxData, 'JSON');
 
