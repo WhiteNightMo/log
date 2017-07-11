@@ -104,7 +104,8 @@
                                                                 <div class="comment-meta">
                                                                     <time>
                                                                         <span class="fa fa-calendar fa-fw"></span>
-                                                                        {$comment_children['comment_date']|strtotime|date='Y-m-d H:i',###}
+                                                                        {$comment_children['comment_date']|strtotime|date='Y-m-d
+                                                                        H:i',###}
                                                                     </time>
                                                                     <if condition="$identity || session('user_id') == $comment_children['user_id']">
                                                                         <a href="javascript:;" class='comment-remove'
@@ -130,16 +131,28 @@
                         <div id="respond" class="comment-respond">
                             <h2>发表评论</h2>
 
-                            <if condition="session('user')">
+                            <if condition="!session('user_id')">
                                 <div class="form-group">
-                                    <label>评论</label>
-                                    <textarea class="form-control" id="comment" autocomplete="off"></textarea>
+                                    <label>昵称 *</label><a href="{:U('User/login')}" class="to-login">去登录</a>
+                                    <input class="form-control" id="nickname" autocomplete="off">
                                 </div>
-                                <button class="btn btn-default btn-cancel">取消</button>
-                                <button class="btn btn-danger btn-comment">发表评论</button>
-                                <else/>
-                                <p>尚未登录，不能进行评论。<a href="{:U('User/login')}">登录</a></p>
+                                <div class="form-group">
+                                    <label>邮箱 *</label>
+                                    <input class="form-control" id="email" autocomplete="off"
+                                           placeholder="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
+                                </div>
+                                <div class="form-group">
+                                    <label>网址(http://)</label>
+                                    <input class="form-control" id="url" autocomplete="off"
+                                           placeholder="^([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$">
+                                </div>
                             </if>
+                            <div class="form-group">
+                                <label>评论</label>
+                                <textarea class="form-control" id="comment" autocomplete="off"></textarea>
+                            </div>
+                            <button class="btn btn-default btn-cancel">取消</button>
+                            <button class="btn btn-danger btn-comment">发表评论</button>
                         </div>
                     </div>
                 </div>
@@ -154,7 +167,8 @@
 
 <block name="model">
     <!-- 模态框（Modal） -->
-    <div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -189,7 +203,6 @@
                 var article = $(this).closest('article');
                 commentId = article.attr("id").split("-")[1];
                 article.after($("#respond"));
-                $("#comment").focus();
 
                 // comment-list-children
                 if ($(this).parents(".comment-list-children").length > 0)
@@ -198,6 +211,9 @@
             // 取消
             $(".btn-cancel").click(function () {
                 commentId = 0;
+                $("#nickname").val("");
+                $("#email").val("");
+                $("#url").val("");
                 $("#comment").val("");
                 $("#comments").append($("#respond"));
             });
@@ -215,48 +231,55 @@
                     type: "post",
                     data: {
                         post: "{$log['id']}",
+                        nickname: $("#nickname").val(),
+                        email: $("#email").val(),
+                        url: $("#url").val(),
                         comment: comment,
-                        comment_id: commentId,
+                        comment_id: commentId
                     },
                     success: function (data) {
-                        if (data.status > 0)
+                        if (data.status > 0) {
                             window.location.reload();
-                        else {
+                        } else {
                             showTips(data.info);
                             $("#loadDiv").hide();
                         }
                     }
                 });
             });
-
-
-            // 删除评论
-            $(document).on('click', '.comment-remove', function () {
-                commentId = $(this).parent().parent().parent().attr("id").split("-")[1];
-            });
-            // 取消
-            $("#tipsCancel").click(function () {
-                commentId = 0;
-            });
-            // 确定
-            $("#tipsSure").click(function () {
-                $("#loadDiv").show();
-                $.ajax({
-                    url: "{:U('Comment/remove')}",
-                    type: "post",
-                    data: {comment_id: commentId},
-                    success: function (data) {
-                        $("#tipsCancel").click();
-
-                        if (data.status > 0)
-                            window.location.reload();
-                        else {
-                            $("#loadDiv").hide();
-                            alert(data.info);
-                        }
-                    }
-                });
-            });
         });
     </script>
+    <if condition="session('user_id')">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // 删除评论
+                $(document).on('click', '.comment-remove', function () {
+                    commentId = $(this).parent().parent().parent().attr("id").split("-")[1];
+                });
+                // 取消
+                $("#tipsCancel").click(function () {
+                    commentId = 0;
+                });
+                // 确定
+                $("#tipsSure").click(function () {
+                    $("#loadDiv").show();
+                    $.ajax({
+                        url: "{:U('Comment/remove')}",
+                        type: "post",
+                        data: {comment_id: commentId},
+                        success: function (data) {
+                            $("#tipsCancel").click();
+
+                            if (data.status > 0)
+                                window.location.reload();
+                            else {
+                                $("#loadDiv").hide();
+                                alert(data.info);
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </if>
 </block>

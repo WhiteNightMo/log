@@ -63,22 +63,64 @@ class CommentController extends BaseController
     {
         $this->checkLogged();
 
-        $data['user'] = session('user');
-        $data['comment_respond'] = I('post.respond');
-        $data['comment_date'] = date('Y-m-d H:i:s');
-        $data['post_id'] = I('post.post/d');
-        $data['content'] = I('post.comment');
-        $data['comment_parent'] = I('post.comment_id/d');
+        $postId = I('post.post/d');
+        $parentId = I('post.comment_id/d');
+        $comment = I('post.comment');
+        // 参数验证
+        $ajaxData['status'] = 0;
+        if (empty($postId) || empty($parentId) || empty($comment)) {
+            $ajaxData['info'] = '参数有误';
+            $this->ajaxReturn($ajaxData, 'JSON');
+        }
 
-        // 响应
-        $result = M('comment')->add($data);
-        if ($result > 0) {
-            $ajaxData['status'] = 1;
-            $ajaxData['info'] = '操作成功';
+
+        // 如果已登录，则根据user_id获取nickname、email、url
+        $userId = session('user_id');
+        if (!empty($userId)) {
+            $userData = M('user')->field('nickname,email,url')->where(array('id' => $userId))->find();
+            $data['user_id'] = $userId;
+            $data['comment_author'] = $userData['nickname'];
+            $data['comment_author_email'] = $userData['email'];
+            $data['comment_author_url'] = $userData['url'];
 
         } else {
-            $ajaxData['status'] = 0;
-            $ajaxData['info'] = '操作失败！';
+            // 未登录则获取前端传递的数据
+            $nickname = I('post.nickname');
+            $email = I('post.email');
+            $url = I('post.url');
+            if (empty($nickname) || empty($email) || empty($url)) {
+                $ajaxData['info'] = '参数有误';
+                $this->ajaxReturn($ajaxData, 'JSON');
+            }
+
+            $data['user_id'] = 0;
+            $data['comment_author'] = $nickname;
+            $data['comment_author_email'] = $email;
+            $data['comment_author_url'] = $url;
+        }
+
+
+        // 封装数据
+        $data['post_id'] = $postId;
+        $data['comment_date'] = date('Y-m-d H:i:s');
+        $data['content'] = $comment;
+        $data['comment_parent'] = $parentId;
+
+        // 验证数据
+        $Comment = D('comment');
+        if (!$Comment->create($data)) {
+            $ajaxData['info'] = $Comment->getError();   // 返回错误状态
+            $this->ajaxReturn($ajaxData, 'JSON');
+        }
+
+
+        // 响应
+        $result = $Comment->add($data);
+        if (!$result) {
+            $ajaxData['info'] = $result;
+        } else {
+            $ajaxData['status'] = 1;
+            $ajaxData['info'] = '评论成功！';
         }
         $this->ajaxReturn($ajaxData, 'JSON');
     }
