@@ -87,7 +87,7 @@ class CommentController extends BaseController
             $nickname = I('post.nickname');
             $email = I('post.email');
             $url = I('post.url');
-            if (empty($nickname) || empty($email) || empty($url)) {
+            if (empty($nickname) || empty($email)) {
                 $ajaxData['info'] = '参数有误';
                 $this->ajaxReturn($ajaxData, 'JSON');
             }
