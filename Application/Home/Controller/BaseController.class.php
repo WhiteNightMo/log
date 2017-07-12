@@ -40,7 +40,10 @@ class BaseController extends Controller
     {
         if (!session('user')) {
             if (cookie('login')) {  // 从cookie中读取用户名
-                session("user", explode('|', cookie('login'))[0]);
+                $loginData = explode('|', cookie('login'));
+                session("user", $loginData[0]);
+                session("user_id", $loginData[1]);
+                session("nickname", $loginData[2]);
             } else if ($jump) { // 跳转登录
                 $this->redirect('User/login');
             }

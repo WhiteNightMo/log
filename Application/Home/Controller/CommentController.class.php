@@ -63,6 +63,7 @@ class CommentController extends BaseController
     {
         $postId = I('post.post/d');
         $parentId = I('post.comment_id/d');
+        $parentAuthor = I('post.comment_author');
         $comment = I('post.comment');
         // 参数验证
         $ajaxData['status'] = 0;
@@ -103,6 +104,7 @@ class CommentController extends BaseController
         $data['comment_date'] = date('Y-m-d H:i:s');
         $data['content'] = $comment;
         $data['comment_parent'] = $parentId;
+        $data['comment_parent_author'] = $parentAuthor;
 
 
         // 验证数据
@@ -140,8 +142,8 @@ class CommentController extends BaseController
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
-        // 只删除当前评论，不连带删除子评论
-        $where['comment_id'] = $comment_id;
+        // 连带删除子评论
+        $where['comment_id|comment_parent'] = $comment_id;
         $result = M("comment")->where($where)->delete();
 
         // 响应

@@ -106,8 +106,7 @@
                                                                 <div class="comment-meta">
                                                                     <time>
                                                                         <span class="fa fa-calendar fa-fw"></span>
-                                                                        {$comment_children['comment_date']|strtotime|date='Y-m-d
-                                                                        H:i',###}
+                                                                        {$comment_children['comment_date']|strtotime|date='Y-m-d H:i',###}
                                                                     </time>
                                                                     <if condition="$identity || session('user_id') == $comment_children['user_id']">
                                                                         <a href="javascript:;" class='comment-remove'
@@ -198,15 +197,21 @@
     <script type="text/javascript">
         $(document).ready(function () {
             // 评论
-            var commentId = 0;
+            var commentId = 0, commentAuthor = '';
             $(".comment-reply").click(function () {
                 var article = $(this).closest('article');
                 commentId = article.attr("id").split("-")[1];
+                commentAuthor = $.trim(article.find('div.comment-author a').text());
                 article.after($("#respond"));
+
+                // comment-list-children
+                if ($(this).parents(".comment-list-children").length > 0)
+                    commentId = $(this).parents(".comment-list-children").prev('div').find("article").attr("id").split("-")[1];
             });
             // 取消
             $(".btn-cancel").click(function () {
                 commentId = 0;
+                commentAuthor = '';
                 $("#nickname").val("");
                 $("#email").val("");
                 $("#url").val("");
@@ -217,7 +222,7 @@
             $(".btn-comment").click(function () {
                 var comment = $("#comment").val();
                 if ($.trim(comment) == "") {
-                    alert("请输入评论内容");
+                    showTips("请输入评论内容");
                     return;
                 }
 
@@ -231,7 +236,8 @@
                         email: $("#email").val(),
                         url: $("#url").val(),
                         comment: comment,
-                        comment_id: commentId
+                        comment_id: commentId,
+                        comment_author: commentAuthor
                     },
                     success: function (data) {
                         $("#loadDiv").hide();
