@@ -1,6 +1,6 @@
 <extend name="Public:base"/>
 <block name="title">
-    <empty name="author">
+    <empty name="titleBar">
         welcome
         <else/>
         {$titleBar}
@@ -13,7 +13,7 @@
         <if condition="$titleBar">{// 存在表示没有内容或查看指定作者的日志}
             <div class="row log">
                 <div class="col-lg-12">
-                    <div class="well well-lg" style="border-left: 8px #333 solid;padding: 3% 5%;">
+                    <div class="well well-lg" style="border-left: 8px #333 solid;padding: 2%;">
                         <header><h2>{$titleBar}</h2></header>
                     </div>
                     <!-- /.panel -->
