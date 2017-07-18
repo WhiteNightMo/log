@@ -1,0 +1,85 @@
+<extend name="Public:base"/>
+<block name="title">归档中心</block>
+<block name="css"></block>
+
+<block name="main">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">归档中心</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <foreach name="logs" item="logYear">
+                <php>$year = $key; // 获取年份</php>
+                <div class="col-lg-6 col-md-12">
+                    <div class="panel panel-default archive-list">
+                        <div class="panel-heading archive-title">
+                            # {$year}年（<span></span>）
+                        </div>
+                        <!-- .panel-heading -->
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion_{$year}">
+                                <foreach name="logYear" item="logMonth">
+                                    <div class="panel panel-default archive-children-list">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion_{$year}"
+                                                   href="#collapse_{$year}_{$key}"
+                                                   aria-expanded="false" class="collapsed archive-children-title">
+                                                    {$key}月（{:count($logMonth)}）
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse_{$year}_{$key}" class="panel-collapse collapse"
+                                             aria-expanded="false" style="height: 0px;">
+                                            <div class="panel-body">
+                                                <ul>
+                                                    <foreach name="logMonth" item="logDay">
+                                                        <li>
+                                                            <a href="__ROOT__/p/{$logDay['id']}">{$logDay['title']}</a>
+                                                            ({:date("M j, Y", strtotime($logDay['post_date']))})
+                                                        </li>
+                                                    </foreach>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </foreach>
+                            </div>
+                        </div>
+                        <!-- .panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </foreach>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+</block>
+
+<block name="model"></block>
+
+<block name="script">
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var colors = ['primary', 'green', 'yellow', 'red'];
+            var childColors = ['info', 'success', 'warning', 'danger'];
+            var length = colors.length;
+            $(".archive-list").each(function (index) {
+                var total = 0;
+                $(this).removeClass('panel-default').addClass('panel-' + colors[index % length]);
+                $(this).find('.archive-children-list').each(function () {
+                    $(this).removeClass('panel-default').addClass('panel-' + childColors[index % length]);
+                    total += $(this).find('li').length;
+                });
+                $(this).find('.archive-title span').html(total);
+            });
+        });
+    </script>
+</block>

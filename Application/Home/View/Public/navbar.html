@@ -132,6 +132,11 @@
                         <i class="fa fa-home"></i> 首页
                     </a>
                 </li>
+                <li>
+                    <a href="{:U('Archive/index')}">
+                        <i class="fa fa-inbox"></i> 归档
+                    </a>
+                </li>
                 <if condition="session('user')">
                     <li>
                         <a href="#">
@@ -152,33 +157,6 @@
                         <a href="{:U('Comment/index')}">
                             <i class="fa fa-comment"></i> 消息中心
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-inbox"></i> 归档
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <php>
-                                $user = $_GET['author']?$_GET['author']:session('user');
-                                $archiveCache = get_data_cache($user,'archive');
-                            </php>
-                            <notempty name="archiveCache">
-                                <foreach name="archiveCache" item="archiveItem">
-                                    <li>
-                                        <a href="__ROOT__/author/{$user}/archive/{$archiveItem['month']}">
-                                            {:date('Y年m月', strtotime($archiveItem['month'] . '01'))}
-                                            ({$archiveItem['count']})
-                                        </a>
-                                    </li>
-                                </foreach>
-                                <else/>
-                                <li>
-                                    <a href="#">暂无日志</a>
-                                </li>
-                            </notempty>
-                        </ul>
-                        <!-- /.nav-third-level -->
                     </li>
                 </if>
             </ul>

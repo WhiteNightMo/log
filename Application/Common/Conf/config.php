@@ -18,10 +18,6 @@ return array(
     'PROJECT_NAME' => 'my log',    // 项目名
 
 
-    /* 加载扩展文件*/
-    'LOAD_EXT_FILE' => 'dataCache.func',
-
-
     /* 数据库设置 */
     'DB_TYPE' => 'mysql',     // 数据库类型
     'DB_HOST' => 'localhost', // 服务器地址
@@ -50,6 +46,5 @@ return array(
         's/:s\s$' => array('Index/index'),
         // 作者
         'author/:author$' => array('Index/index'),
-        'author/:author/archive/:archive\d$' => array('Index/index'),
     ),
 );
