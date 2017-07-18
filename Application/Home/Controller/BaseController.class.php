@@ -5,6 +5,7 @@
  * 操作：
  *      checkLogged：检查是否登录
  *      initLogged：初始化登录
+ *      checkVerify：检查验证码
  *
  * @author xiaomo<xiaomo@nixiaomo.com>
  */
@@ -38,7 +39,7 @@ class BaseController extends Controller
      */
     protected function initLogged($jump = true)
     {
-        if (!session('user')) {
+        if (!session('user_id')) {
             if (cookie('login')) {  // 从cookie中读取用户名
                 $loginData = explode('|', cookie('login'));
                 session("user", $loginData[0]);
@@ -48,5 +49,19 @@ class BaseController extends Controller
                 $this->redirect('User/login');
             }
         }
+    }
+
+
+    /**
+     * 检查验证码
+     *
+     * @param $code
+     * @param string $id
+     * @return bool
+     */
+    protected function checkVerify($code, $id = '')
+    {
+        $verify = new \Think\Verify();
+        return $verify->check($code, $id);
     }
 }

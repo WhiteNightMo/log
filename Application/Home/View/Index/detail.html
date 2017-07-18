@@ -150,6 +150,13 @@
                                 <label>评论</label>
                                 <textarea class="form-control" id="comment" autocomplete="off"></textarea>
                             </div>
+                            <div class="form-group input-group" style="width: 100%;">
+                                <span class="input-group-addon" id="auth_span"
+                                      style="background-image: url('{:U("User/get_verify")}')">
+                                </span>
+                                <input class="form-control" placeholder="验证码" name="code" type="text"
+                                       id="code" maxlength="4">
+                            </div>
                             <button class="btn btn-default btn-cancel">取消</button>
                             <button class="btn btn-danger btn-comment">发表评论</button>
                         </div>
@@ -206,7 +213,10 @@
 
                 // comment-list-children
                 if ($(this).parents(".comment-list-children").length > 0)
-                    commentId = $(this).parents(".comment-list-children").prev('div').find("article").attr("id").split("-")[1];
+                    commentId = $(this).parents(".comment-list-children")
+                            .prev('div').find("article").attr("id").split("-")[1];
+
+                $("#auth_span").click();
             });
             // 取消
             $(".btn-cancel").click(function () {
@@ -221,8 +231,9 @@
             // 确定
             $(".btn-comment").click(function () {
                 var comment = $("#comment").val();
-                if ($.trim(comment) == "") {
-                    showTips("请输入评论内容");
+                var code = $("#code").val();
+                if ($.trim(comment) == "" || code == "") {
+                    showTips("评论和验证码不能为空");
                     return;
                 }
 
@@ -235,6 +246,7 @@
                         nickname: $("#nickname").val(),
                         email: $("#email").val(),
                         url: $("#url").val(),
+                        code: code,
                         comment: comment,
                         comment_id: commentId,
                         comment_author: commentAuthor
@@ -245,9 +257,19 @@
 
                         if (data.status > 0) {
                             window.location.reload();
+                        } else {
+                            $("#auth_span").click();
                         }
                     }
                 });
+            });
+
+
+            // 获取验证码
+            $("#auth_span").click(function () {
+                document.getElementById('auth_span').style.backgroundImage = 'url({:U("User/get_verify")}?rand=' +
+                        Math.random() + ')';
+                $("#code").val("");
             });
         });
     </script>

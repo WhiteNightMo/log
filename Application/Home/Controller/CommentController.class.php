@@ -62,13 +62,21 @@ class CommentController extends BaseController
     public function post()
     {
         $postId = I('post.post/d');
+        $code = I('post.code');
         $parentId = I('post.comment_id/d');
         $parentAuthor = I('post.comment_author');
         $comment = I('post.comment');
         // 参数验证
         $ajaxData['status'] = 0;
-        if (empty($postId) || (empty($parentId) && $parentId != 0) || empty($comment)) {
+        if (empty($postId) || (empty($parentId) && $parentId != 0) || empty($code) || empty($comment)) {
             $ajaxData['info'] = '参数有误';
+            $this->ajaxReturn($ajaxData, 'JSON');
+        }
+
+
+        // 判断验证码
+        if (!$this->checkVerify($code)) {
+            $ajaxData['info'] = '验证码错误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
