@@ -1,0 +1,242 @@
+<extend name="Public:base"/>
+<block name="title">友链</block>
+<block name="css">
+    <style type="text/css">
+        .form {
+            width: 300px;
+            margin: 0px auto;
+        }
+
+        .form div {
+            margin-top: 10px;
+        }
+
+        .form input {
+            display: inline;
+            width: 70%;
+        }
+
+        .form textarea {
+            width: 97%;
+        }
+    </style>
+</block>
+
+<block name="main">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    友链
+                    <notempty name="Think.session.user_id">
+                        <a href="javascript:;" class="btn btn-default btn-create" data-toggle="modal"
+                           data-target="#editModal" style="margin-left: 10px">新增</a>
+                    </notempty>
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-red link-list">
+                    <div class="panel-body">
+                        <ul>
+                            <foreach name="links" item="link">
+                                <li data-id="{$link['id']}">
+                                    <a href="http://{$link['url']}" target="_blank">{$link['title']}</a>
+                                    <span>
+                                        <notempty name="link['intro']">
+                                            （{$link['intro']}）
+                                        </notempty>
+                                    </span>
+                                    <notempty name="Think.session.user_id">
+                                        <a href="javascript:;" class="link link-edit" data-toggle="modal"
+                                           data-target="#editModal">
+                                            <span class="fa fa-pencil fa-fw"></span>编辑</a>
+                                        <a href="javascript:;" class="link link-edit" data-toggle="modal"
+                                           data-target="#tipsModal">
+                                            <span class="fa fa-times fa-fw"></span>删除</a>
+                                    </notempty>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                    <!-- /.panel-body --> </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+</block>
+
+<block name="model">
+    <notempty name="Think.session.user_id">
+        <!-- tips模态框（Modal） -->
+        <div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">提示</h4>
+                    </div>
+                    <div class="modal-body" id="tipsContent">
+                        确认删除此条友链？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="tipsCancel">取消</button>
+                        <button type="button" class="btn btn-primary" id="tipsSure">确认</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <!-- edit模态框（Modal） -->
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">友链</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="form form-notice">
+                                <div>
+                                    <span class="glyphicon glyphicon-tag"></span>
+                                    名称
+                                    <input type="text" class="form-control" id="linkTitle"/>
+                                </div>
+                                <div>
+                                    <span class="glyphicon glyphicon-link"></span>
+                                    URL
+                                    <input type="text" class="form-control" id="linkUrl"
+                                           placeholder="http://"/>
+                                </div>
+                                <div>
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    简介
+                                    <textarea class="form-control" id="linkIntro"
+                                              style="resize: none; overflow-y:auto; min-height: 150px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal" id="editCancel">取消
+                        </button>
+                        <button type="button" class="btn btn-primary" id="editSure">确认</button>
+                    </div>
+                </div>
+                <!-- /.modal-content --> </div>
+        </div>
+        <!-- /.modal -->
+    </notempty>
+</block>
+
+<block name="script">
+    <notempty name="Think.session.user_id">
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // 删除
+                var linkId = 0;
+                $(document).on('click', '.link-delete', function () {
+                    linkId = $(this).parent().attr("data-id");
+                });
+                // 取消
+                $("#tipsCancel").click(function () {
+                    linkId = 0;
+                });
+                // 确定
+                $("#tipsSure").click(function () {
+                    $("#loadDiv").show();
+                    $.ajax({
+                        url: "{:U('Link/delete')}",
+                        type: "post",
+                        data: {link_id: linkId},
+                        success: function (data) {
+                            $("#loadDiv").hide();
+                            showTips(data.msg);
+
+                            if (data.status > 0) {
+                                $(".link-list ul li[data-id='" + linkId + "']").remove();
+                            }
+                            $("#tipsCancel").click();
+                        }
+                    });
+                });
+
+
+                // 新增/取消
+                $(".btn-create,#editCancel").click(function () {
+                    clear();
+                });
+                // 编辑
+                $(document).on('click', '.link-edit', function () {
+                    clear();
+                    linkId = $(this).parent().attr("data-id");
+
+                    var a = $(this).parent().children('a:first');
+                    var intro = $(this).parent().children('span:first').html();
+                    intro = $.trim(intro);
+                    intro = intro.substr(1, intro.length - 2);
+
+
+                    $("#linkTitle").val(a.text());
+                    $("#linkUrl").val(a.attr('href').replace(/http\:\/\//g, ''));
+                    $("#linkIntro").val(intro);
+                });
+                // 确定
+                $("#editSure").click(function () {
+                    var title = $("#linkTitle").val();
+                    var url = $("#linkUrl").val();
+                    var intro = $("#linkIntro").val();
+                    if ($.trim(title) == '' || $.trim(url) == '') {
+                        showTips('友链名和URL不能为空');
+                        return;
+                    }
+
+                    $("#loadDiv").show();
+                    $.ajax({
+                        url: "{:U('Link/create')}",
+                        type: "post",
+                        data: {
+                            link_id: linkId,
+                            title: title,
+                            url: url,
+                            intro: intro
+                        },
+                        success: function (data) {
+                            $("#loadDiv").hide();
+                            $("#tipsCancel").click();
+                            showTips(data.msg);
+
+                            if (data.status > 0) {
+                                window.location.reload();
+                            }
+                        }
+                    });
+                });
+
+
+                // 清空editModel内容
+                function clear() {
+                    $("#linkTitle").val("");
+                    $("#linkUrl").val("");
+                    $("#linkIntro").val("");
+                    linkId = 0;
+                }
+            });
+        </script>
+    </notempty>
+</block>

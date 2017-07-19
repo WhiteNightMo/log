@@ -137,7 +137,12 @@
                         <i class="fa fa-inbox"></i> 归档
                     </a>
                 </li>
-                <if condition="session('user')">
+                <li>
+                    <a href="{:U('Link/index')}">
+                        <i class="fa fa-link"></i> 友链
+                    </a>
+                </li>
+                <notempty name="Think.session.user_id">
                     <li>
                         <a href="#">
                             <i class="fa fa-bookmark"></i> 个人日志
@@ -158,7 +163,7 @@
                             <i class="fa fa-comment"></i> 消息中心
                         </a>
                     </li>
-                </if>
+                </notempty>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
