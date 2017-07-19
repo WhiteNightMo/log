@@ -5,6 +5,10 @@
  * 操作：
  *      index：友链
  *
+ * 消息处理：
+ *      create：新增/编辑
+ *      delete：删除
+ *
  * @author xiaomo<xiaomo@etlinker.com>
  * @copyright Copyright(C)2016 Wuhu Yichuan Network Technology Corporation Ltd. All rights reserved.
  */
@@ -21,8 +25,15 @@ class LinkController extends BaseController
     {
         $this->initLogged(false);
 
+        // 默认显示我自己的友链
+        $userId = session('user_id');
+        if (empty($userId)) {
+            $userId = 6;
+        }
+
         // 获取友链列表
         $links = M('link')
+            ->where(array('user_id' => $userId))
             ->order('id ASC')
             ->select();
 
@@ -62,7 +73,9 @@ class LinkController extends BaseController
 
         // 新增
         $status = true;
+        $userId = session('user_id');
         if ($id == 0) {
+            $data['user_id'] = $userId;
             $result = $Link->add($data);
             if (!$result) {
                 $status = false;
@@ -71,7 +84,9 @@ class LinkController extends BaseController
             }
 
         } else {    // 编辑
-            $result = $Link->where(array('id' => $id))->save($data);
+            $where['id'] = $id;
+            $where['user_id'] = $userId;
+            $result = $Link->where($where)->save($data);
             if ($result === false) {
                 $status = false;
             } else {
@@ -106,7 +121,9 @@ class LinkController extends BaseController
 
 
         // 删除数据
-        $result = M('link')->where(array('id' => $id))->delete();
+        $result = M('link')
+            ->where(array('id' => $id, 'user_id' => session('user_id')))
+            ->delete();
         if (!$result) {
             $ajaxData['msg'] = '删除失败';
         } else {
