@@ -29,7 +29,7 @@
                             <header>
                                 <h2><a target="_blank" href="__ROOT__/p/{$log['id']}">{$log['title']}</a></h2>
                             </header>
-                            <div class="log-content">{$log['content']}</div>
+                            <div class="log-content">{:cut_html_str($log['content'],128)}</div>
                             <footer>
                                 <span class="log-footer">
                                     <span class="fa fa-calendar fa-fw"></span>
