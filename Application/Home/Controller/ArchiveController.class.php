@@ -4,6 +4,7 @@
  *
  * 操作：
  *      index：归档中心
+ *      about：关于
  *
  * @author xiaomo<xiaomo@etlinker.com>
  * @copyright Copyright(C)2016 Wuhu Yichuan Network Technology Corporation Ltd. All rights reserved.
@@ -25,7 +26,7 @@ class ArchiveController extends BaseController
         // 获取文章列表
         $data = M('post')
             ->field('id,title,post_date')
-            ->where(array('status' => 1))
+            ->where(array('status' => 1, 'user_id' => $this->getUserId()))
             ->order('post_date DESC')
             ->select();
 
@@ -39,6 +40,16 @@ class ArchiveController extends BaseController
         }
 
         $this->assign('logs', $logs);
+        $this->display();
+    }
+
+
+    /**
+     * 关于
+     */
+    public function about()
+    {
+        $this->initLogged(false);
         $this->display();
     }
 }

@@ -25,15 +25,10 @@ class LinkController extends BaseController
     {
         $this->initLogged(false);
 
-        // 默认显示我自己的友链
-        $userId = session('user_id');
-        if (empty($userId)) {
-            $userId = 6;
-        }
 
         // 获取友链列表
         $links = M('link')
-            ->where(array('user_id' => $userId))
+            ->where(array('user_id' => $this->getUserId()))
             ->order('id ASC')
             ->select();
 

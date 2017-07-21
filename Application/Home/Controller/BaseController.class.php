@@ -53,6 +53,21 @@ class BaseController extends Controller
 
 
     /**
+     * 获取user_id
+     *
+     * @return mixed
+     */
+    protected function getUserId()
+    {
+        $userId = session('user_id');
+        if (empty($userId)) {
+            $userId = C('DEFAULT_USER_ID');
+        }
+        return $userId;
+    }
+
+
+    /**
      * 检查验证码
      *
      * @param $code

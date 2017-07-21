@@ -16,6 +16,7 @@ return array(
 
     /* 项目配置 */
     'PROJECT_NAME' => 'my log',    // 项目名
+    'DEFAULT_USER_ID' => 6,    // 归档、友链默认内容的user_id
 
 
     /* 数据库设置 */
@@ -46,5 +47,11 @@ return array(
         's/:s\s$' => array('Index/index'),
         // 作者
         'author/:author$' => array('Index/index'),
+        // 归档
+        'archives' => array('Archive/index'),
+        // 友链
+        'links' => array('Link/index'),
+        // 关于
+        'about' => array('Archive/about'),
     ),
 );
