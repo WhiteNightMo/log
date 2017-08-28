@@ -7,6 +7,8 @@
     </empty>
 </block>
 <block name="css">
+    <!-- Select2 CSS-->
+    <link href="__PUBLIC__/css/select2.min.css" rel="stylesheet" type="text/css">
     <!-- Summernote CSS-->
     <link href="__PUBLIC__/css/summernote.css" rel="stylesheet" type="text/css">
 </block>
@@ -16,7 +18,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    <empty name="title">
+                    <empty name="post">
                         撰写新日志
                         <else/>
                         编辑日志
@@ -31,10 +33,20 @@
                 <form role="form">
                     <div class="form-group">
                         <input class="form-control input-title" placeholder="在此输入标题"
-                               value="{$title|default=''}" autofocus>
+                               value="{$post['title']|default=''}" autofocus>
                     </div>
                     <div class="form-group">
-                        <div id="summernote">{$content|default=''}</div>
+                        <select class="js-example-placeholder-multiple js-data-example-ajax form-control"
+                                multiple="multiple" name="tags[]" id="tags">
+                            <notempty name="tags">
+                                <foreach name="tags" item="tag">
+                                    <option value="{$tag['id']}" selected>{$tag['name']}</option>
+                                </foreach>
+                            </notempty>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div id="summernote">{$post['content']|default=''}</div>
                     </div>
                 </form>
             </div>
@@ -45,15 +57,15 @@
                     <div class="panel-body">
                         <div class="form-group" style="min-height: 34px;">
                             <a class="btn btn-default btn-draft">保存为草稿</a>
-                            <if condition="$status eq 1">
-                                <a href="__ROOT__/p/{$id}" class="btn btn-default"
+                            <if condition="$post['status'] eq 1">
+                                <a href="__ROOT__/p/{$post['id']}" class="btn btn-default"
                                    style="float:right;" target="_blank">查看</a>
                             </if>
                         </div>
                         <div class="form-group">
                             <span class="fa fa-thumb-tack fa-fw"></span>当前状态：
                             <strong>
-                                <if condition="$status eq 1">已发布
+                                <if condition="$post['status'] eq 1">已发布
                                     <else/>
                                     草稿
                                 </if>
@@ -61,15 +73,15 @@
                         </div>
                         <div class="form-group">
                             <span class="fa fa-calendar fa-fw"></span>上次编辑：
-                            <strong>{$edit_date|default='待发布'}</strong>
+                            <strong>{$post['edit_date']|default='待发布'}</strong>
                         </div>
                     </div>
                     <div class="panel-footer" style="min-height: 55px">
-                        <if condition="$status neq 0">
+                        <if condition="$post['status'] neq 0">
                             <a class="btn btn-link" href="{:U('Post/trash')}?p={$id}&action=trash">移至回收站</a>
                         </if>
                         <button class="btn btn-primary btn-post" style="float: right;">
-                            <if condition="$status eq 1">更新
+                            <if condition="$post['status'] eq 1">更新
                                 <else/>
                                 发布
                             </if>
@@ -87,15 +99,56 @@
 <block name="model"></block>
 
 <block name="script">
+    <!-- Select2 JavaScript -->
+    <script src="__PUBLIC__/js/select2.min.js"></script>
+
     <!-- Summernote JavaScript -->
     <script src="__PUBLIC__/js/summernote.min.js"></script>
-
     <!-- Summernote lang zh-CN JavaScript -->
     <script src="__PUBLIC__/js/summernote-zh-CN.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
         $(document).ready(function () {
+            function formatTopic(topic) {
+                return "<div class='select2-result-repository clearfix'>" +
+                "<div class='select2-result-repository__meta'>" +
+                "<div class='select2-result-repository__title'>" +
+                topic.name ? topic.name : "ThinkPHP" +
+                "</div></div></div>";
+            }
+
+            function formatTopicSelection(topic) {
+                return topic.name || topic.text;
+            }
+
+            $(".js-example-placeholder-multiple").select2({
+                tags: true,
+                placeholder: '选择标签',
+                minimumInputLength: 2,
+                ajax: {
+                    url: "{:U('Post/tags')}",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results: data
+                        };
+                    },
+                    cache: true
+                },
+                templateResult: formatTopic,
+                templateSelection: formatTopicSelection,
+                escapeMarkup: function (markup) {
+                    return markup;
+                }
+            });
+
             $('#summernote').summernote({
                 height: 300,
                 minHeight: 300,
@@ -133,8 +186,9 @@
              */
             function release(status) {
                 var title = $(".input-title").val();
+                var tags = $("#tags").val();
                 var content = $('#summernote').code();
-                var p = '{$id|default=0}';
+                var p = '{$post["id"]|default=0}';
                 if ($.trim(title) == "" || content == "" || content == "<br>" || content == "<p><br></p>") {
                     showTips("标题和内容不能为空");
                     return;
@@ -151,6 +205,7 @@
                     data: {
                         p: p,
                         title: title,
+                        tags: tags,
                         content: content,
                         status: status
                     },

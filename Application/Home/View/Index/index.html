@@ -33,7 +33,7 @@
                             <footer>
                                 <span class="log-footer">
                                     <span class="fa fa-calendar fa-fw"></span>
-                                    {$log['post_date']|strtotime|date='Y-m-d H:i',###}
+                                    {$log['edit_date']|strtotime|date='Y-m-d H:i',###}
                                 </span>
                                 <span class="log-footer">
                                     <span class="fa fa-user fa-fw"></span>
@@ -63,7 +63,4 @@
 
 <block name="model"></block>
 
-<block name="script">
-    <!-- Resize img JavaScript -->
-    <script src="__PUBLIC__/js/resize-img.js"></script>
-</block>
+<block name="script"></block>
