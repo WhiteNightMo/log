@@ -45,6 +45,8 @@ return array(
         'post_status/:post_status' => array('Post/index'),
         // 搜索
         's/:s\s$' => array('Index/index'),
+        // 标签
+        'tag/:tag\s$' => array('Index/index'),
         // 作者
         'author/:author$' => array('Index/index'),
         // 归档

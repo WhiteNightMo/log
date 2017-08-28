@@ -59,7 +59,7 @@
                             <a class="btn btn-default btn-draft">保存为草稿</a>
                             <if condition="$post['status'] eq 1">
                                 <a href="__ROOT__/p/{$post['id']}" class="btn btn-default"
-                                   style="float:right;" target="_blank">查看</a>
+                                   style="float:right;">查看</a>
                             </if>
                         </div>
                         <div class="form-group">
@@ -78,7 +78,7 @@
                     </div>
                     <div class="panel-footer" style="min-height: 55px">
                         <if condition="$post['status'] neq 0">
-                            <a class="btn btn-link" href="{:U('Post/trash')}?p={$id}&action=trash">移至回收站</a>
+                            <a class="btn btn-link" href="{:U('Post/trash')}?p={$post['id']}&action=trash">移至回收站</a>
                         </if>
                         <button class="btn btn-primary btn-post" style="float: right;">
                             <if condition="$post['status'] eq 1">更新
