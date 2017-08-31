@@ -24,7 +24,7 @@ class ArchiveController extends BaseController
 
 
         // 获取文章列表
-        $data = M('post')
+        $data = M('Posts')
             ->field('id,title,post_date')
             ->where(array('status' => 1, 'user_id' => $this->getUserId()))
             ->order('post_date DESC')

@@ -27,7 +27,7 @@ class LinkController extends BaseController
 
 
         // 获取友链列表
-        $links = M('link')
+        $links = M('Links')
             ->where(array('user_id' => $this->getUserId()))
             ->order('id ASC')
             ->select();
@@ -59,7 +59,7 @@ class LinkController extends BaseController
         $data['title'] = $title;
         $data['url'] = $url;
         $data['intro'] = $intro;
-        $Link = D('link');
+        $Link = D('Links');
         if (!$Link->create($data)) {
             $ajaxData['msg'] = $Link->getError();   // 返回错误状态
             $this->ajaxReturn($ajaxData, 'JSON');
@@ -71,6 +71,7 @@ class LinkController extends BaseController
         $userId = session('user_id');
         if ($id == 0) {
             $data['user_id'] = $userId;
+            $data['created_at'] = date('Y-m-d H:i:s');
             $result = $Link->add($data);
             if (!$result) {
                 $status = false;
@@ -116,7 +117,7 @@ class LinkController extends BaseController
 
 
         // 删除数据
-        $result = M('link')
+        $result = M('Links')
             ->where(array('id' => $id, 'user_id' => session('user_id')))
             ->delete();
         if (!$result) {

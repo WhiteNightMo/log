@@ -24,7 +24,7 @@ class CommentController extends BaseController
     {
         $this->initLogged();
 
-        $Comment = M('comment')->alias('c');
+        $Comment = M('Comments')->alias('c');
         $userId = session('user_id');
         // 自己文章的一级评论
         $cWhere['p.user_id'] = $userId; // 自己发布的文章
@@ -38,8 +38,8 @@ class CommentController extends BaseController
         $where['c.user_id'] = array('neq', $userId);
 
         // 获取评论信息
-        $join = "LEFT JOIN __COMMENT__ c_parent ON c.comment_parent = c_parent.comment_id";
-        $join .= " RIGHT JOIN __POST__ p ON c.post_id = p.id";
+        $join = "LEFT JOIN __COMMENTS__ c_parent ON c.comment_parent = c_parent.comment_id";
+        $join .= " RIGHT JOIN __POSTS__ p ON c.post_id = p.id";
         $page = init_page($Comment, $where, 10, $join); // 分页
         $comments = $Comment
             ->field("id,title,c.comment_id,c.comment_author,c.comment_date,c.content,c.comment_parent,c.comment_pushed")
@@ -109,14 +109,14 @@ class CommentController extends BaseController
 
         // 封装数据
         $data['post_id'] = $postId;
-        $data['comment_date'] = date('Y-m-d H:i:s');
+//        $data['comment_date'] = date('Y-m-d H:i:s');  // 设定为默认CURRENT_TIMESTAMP
         $data['content'] = $comment;
         $data['comment_parent'] = $parentId;
         $data['comment_parent_author'] = $parentAuthor;
 
 
         // 验证数据
-        $Comment = D('comment');
+        $Comment = D('Comments');
         if (!$Comment->create($data)) {
             $ajaxData['info'] = $Comment->getError();   // 返回错误状态
             $this->ajaxReturn($ajaxData, 'JSON');
@@ -152,7 +152,7 @@ class CommentController extends BaseController
 
         // 连带删除子评论
         $where['comment_id|comment_parent'] = $comment_id;
-        $result = M("comment")->where($where)->delete();
+        $result = M("Comments")->where($where)->delete();
 
         // 响应
         if (!empty(I('post.comment_id/d'))) {  // post，Index/detail
@@ -187,7 +187,7 @@ class CommentController extends BaseController
 
 
         if ($status == "read") {    // 标记为已读
-            $sql = "UPDATE __COMMENT__ SET `comment_pushed` = CASE `comment_id` ";
+            $sql = "UPDATE __COMMENTS__ SET `comment_pushed` = CASE `comment_id` ";
             foreach (explode(",", $marks) as $id) {
                 $sql .= sprintf("WHEN %d THEN %d ", $id, 1);
             }
