@@ -2,6 +2,23 @@
 <block name="title">标签</block>
 <block name="css">
     <style type="text/css">
+        .dropdown-menu {
+            left: auto;
+            padding: 5px;
+            right: 0;
+        }
+
+        .dropdown-menu input[type='file'] {
+            margin-bottom: 5px;
+            max-width: 200px;
+            color: #333;
+        }
+
+        .dropdown-menu button {
+            float: left;
+            margin-right: 5px;
+        }
+
         div.alert {
             padding: 10px;
             padding-right: 35px;
@@ -24,7 +41,22 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-yellow link-list">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        共<span style="margin: 0 3px">{$count}</span>个标签
+                        <div class="dropdown" style="float:right;">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-search fa-fw"></i>
+                                搜索
+                            </a>
+                            <div class="dropdown-menu">
+                                <input class="form-control input-search" type="text" placeholder="搜索...">
+                            </div>
+                            <!-- /.dropdown-user -->
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                    <!-- /.panel-heading -->
                     <div class="panel-body">
                         <foreach name="tags" item="tag">
                             <div class="alert alert-warning alert-dismissable">
@@ -51,9 +83,29 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
         $(function () {
+            // 搜索
+            $(".panel-heading span").html($("div.alert-dismissable").length);
+            $(".input-search").keyup(function () {
+                var text = $(this).val();
+                $("div.alert-dismissable").hide().filter(":contains('" + text + "')").show();
+
+                // 更新当前标签数量
+                $(".panel-heading span").html($("div.alert-dismissable[style='display: inline-block;']").length);
+            });
+
+            // 删除
             $(document).on('click', '.close', function () {
+                // 更新当前标签数量
+                $(".panel-heading span").html($("div.alert-dismissable[style='display: inline-block;']").length);
+
                 console.log('逗你的，并没有写删除功能^-^');
             });
+
+
+            // 覆盖旧contains函数
+            jQuery.expr[':'].contains = function (a, i, m) {
+                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+            };
         });
     </script>
 </block>
