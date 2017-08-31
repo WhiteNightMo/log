@@ -16,10 +16,6 @@
             width: 100% !important;
         }
 
-        li.select2-search.select2-search--inline {
-            width: 100%;
-        }
-
         input.select2-search__field {
             width: 100% !important;
             padding: 1px 6px !important;
@@ -141,7 +137,7 @@
                 placeholder: '选择标签',
                 minimumInputLength: 2,
                 ajax: {
-                    url: "{:U('Post/tags')}",
+                    url: "{:U('Tags/api')}",
                     dataType: 'json',
                     delay: 250,
                     data: function (params) {

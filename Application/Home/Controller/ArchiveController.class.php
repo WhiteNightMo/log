@@ -40,7 +40,7 @@ class ArchiveController extends BaseController
         }
 
         $this->assign('logs', $logs);
-        $this->display();
+        $this->display('Page/archives');
     }
 
 
@@ -50,6 +50,6 @@ class ArchiveController extends BaseController
     public function about()
     {
         $this->initLogged(false);
-        $this->display();
+        $this->display('Page/about');
     }
 }

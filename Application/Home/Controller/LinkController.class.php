@@ -28,12 +28,13 @@ class LinkController extends BaseController
 
         // 获取友链列表
         $links = M('Links')
+            ->field('created_at,updated_at', true)
             ->where(array('user_id' => $this->getUserId()))
             ->order('id ASC')
             ->select();
 
         $this->assign('links', $links);
-        $this->display();
+        $this->display('Page/links');
     }
 
 

@@ -1,0 +1,59 @@
+<extend name="Public:base"/>
+<block name="title">标签</block>
+<block name="css">
+    <style type="text/css">
+        div.alert {
+            padding: 10px;
+            padding-right: 35px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</block>
+
+<block name="main">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    标签
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-yellow link-list">
+                    <div class="panel-body">
+                        <foreach name="tags" item="tag">
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <a href="__ROOT__/tag/{$tag['name']}"
+                                   class="alert-link">{$tag['name']}（{$tag['count']}）</a>
+                            </div>
+                        </foreach>
+                    </div>
+                    <!-- /.panel-body --> </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+</block>
+
+<block name="model">
+</block>
+
+<block name="script">
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript">
+        $(function () {
+            $(document).on('click', '.close', function () {
+                console.log('逗你的，并没有写删除功能^-^');
+            });
+        });
+    </script>
+</block>

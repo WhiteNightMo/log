@@ -52,7 +52,7 @@ class CommentController extends BaseController
         $this->assign("comments", $comments);
         $this->assign('page', bootstrap_page_style($page->show()));   // 赋值分页输出
 
-        $this->display('index');
+        $this->display('Page/comments');
     }
 
 

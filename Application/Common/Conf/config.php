@@ -49,8 +49,11 @@ return array(
         'tag/:tag\s$' => array('Index/index'),
         // 作者
         'author/:author$' => array('Index/index'),
+
         // 归档
         'archives' => array('Archive/index'),
+        // 标签
+        'tags$' => array('Tags/index'),
         // 友链
         'links' => array('Link/index'),
         // 关于
