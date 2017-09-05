@@ -28,10 +28,13 @@
                             <header><h2>{$log['title']}</h2></header>
                             <div class="log-content">{$log['content']}</div>
                             <footer>
-                                <span class="log-footer">
-                                    <span class="fa fa-calendar fa-fw"></span>
-                                    {$log['edit_date']|strtotime|date='Y-m-d H:i',###}
-                                </span>
+                                <div class="tooltip-demo" style="display:inline-block">
+                                    <span class="log-footer" data-toggle="tooltip" data-placement="bottom"
+                                          title="最近更新于：{$log['edit_date']}">
+                                        <span class="fa fa-calendar fa-fw"></span>
+                                        {$log['post_date']|strtotime|date='Y-m-d H:i',###}
+                                    </span>
+                                </div>
                                 <span class="log-footer">
                                     <span class="fa fa-user fa-fw"></span>
                                     <a href="__ROOT__/author/{$log['user']}">{$log['nickname']}</a>
@@ -209,6 +212,12 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
         $(document).ready(function () {
+            // tooltip demo
+            $('.tooltip-demo').tooltip({
+                selector: "[data-toggle=tooltip]",
+                container: "body"
+            });
+
             // 评论
             var commentId = 0, commentAuthor = '';
             $(".comment-reply").click(function () {
