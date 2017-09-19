@@ -28,7 +28,9 @@ class TagsController extends BaseController
         // 获取标签
         $tags = M('Tags')->alias('t')
             ->field('name,COUNT(tag_id) AS count')
-            ->join('LEFT JOIN __POST_TAG__ pt ON t.id = pt.tag_id')
+            ->join('RIGHT JOIN __POST_TAG__ pt ON t.id = pt.tag_id')
+            ->join('RIGHT JOIN __POSTS__ p ON pt.post_id = p.id')
+            ->where(array('p.status' => 1))
             ->group('tag_id')
             ->order('t.id DESC')
             ->select();

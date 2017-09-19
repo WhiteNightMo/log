@@ -61,11 +61,15 @@
                                                 {$comment['title']}
                                             </if>
                                         </td>
-                                        <td>{$comment['comment_date']|strtotime|date='m-d H:i',###}</td>
+                                        <td>{$comment['comment_date']|strtotime|date='Y-m-d H:i',###}</td>
                                         <td>
                                             <span class="fa fa-search"></span>
+                                            <php>
+                                                $url = $comment['comment_pushed'] == 2 ? ("/comment/" . $comment['comment_id']) : "";
+                                                $url = "__ROOT__/p/" . $comment['id'] . $url . "#comment-" . $comment['comment_id'];
+                                            </php>
                                             <a target="_blank"
-                                               href="__ROOT__/p/{$comment['id']}#comment-{$comment['comment_id']}">查看</a>
+                                               href="{$url}">查看</a>
                                             <span class="fa fa-times"></span>
                                             <a href="{:U('Comment/remove')}?comment_id={$comment['comment_id']}">删除</a>
                                         </td>
