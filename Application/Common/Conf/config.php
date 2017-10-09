@@ -5,9 +5,9 @@ return array(
 
 
     /* 模块 */
-    'MULTI_MODULE' => false,    // 关闭多模块访问
+//    'MULTI_MODULE' => false,    // 关闭多模块访问
     'DEFAULT_MODULE' => 'Home', // 默认模块Home
-//    'MODULE_Allow_LIST' => array('Home'),   // 允许模块组，可增，以逗号为隔
+    'MODULE_Allow_LIST' => array('Home', 'Admin'),   // 允许模块组，可增，以逗号为隔
 
 
     // 定义公共错误模板
@@ -50,6 +50,8 @@ return array(
         // 作者
         'author/:author$' => array('Index/index'),
 
+        // 登录
+        'login' => array('User/login'),
         // 归档
         'archives' => array('Archive/index'),
         // 标签
