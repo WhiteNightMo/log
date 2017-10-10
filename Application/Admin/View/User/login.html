@@ -45,15 +45,15 @@
                     请登录 <a href="{:U('User/register')}" style="float:right;color: #ddd;">免费注册</a>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form role="form" id="form">
                         <fieldset>
                             <div class="form-group">
                                 <input id="user" class="form-control" placeholder="用户名"
-                                       name="username" type="text" autofocus>
+                                       name="user" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 <input id="psw" class="form-control" placeholder="密码"
-                                       name="password" type="password">
+                                       name="psw" type="password">
                             </div>
                             <div class="form-group input-group" style="width: 100%;">
                                 <input class="form-control" placeholder="验证码" name="code" type="text"
@@ -61,11 +61,6 @@
                                 <span class="input-group-addon" id="auth_span"
                                       style="background-image: url('{:U("User/get_verify")}')">
                                 </span>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input name="remember" type="checkbox" value="remember">记住7天
-                                </label>
                             </div>
                             <a href="javascript:;" class="btn btn-lg btn-primary btn-block" id="login">登 录</a>
                         </fieldset>
@@ -81,9 +76,6 @@
 <!-- jQuery -->
 <script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
 
-<!-- jQuery md5 -->
-<script src="__PUBLIC__/js/jQuery.md5.js"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -96,30 +88,22 @@
 <script type="text/javascript">
     $(function () {
         $("#login").click(function () {
-            var user = $("#user").val();
-            var psw = $("#psw").val();
-            var code = $("#code").val();
-            if ($.trim(user) == "" || $.trim(psw) == "" || code == "") {
+            if (!$.trim($("#user").val()) || !$.trim($("#psw").val()) || !$("#code").val()) {
                 showTips("请填写完整");
                 return;
             }
             $("#loadDiv").show();
 
             $.ajax({
-                url: "{:U('User/check_login')}",
+                url: "{:U('User/checkLogin')}",
                 type: "post",
-                data: {
-                    user: user,
-                    psw: $.md5(psw),
-                    code: code,
-                    remember: $("input[type='checkbox']").is(':checked')
-                },
+                data: $("#form").serialize(),
                 success: function (data) {
                     $("#loadDiv").hide();
-                    showTips(data.info);
+                    showTips(data.msg);
 
                     if (data.status > 0) {
-                        window.location.href = data.redirect_to;
+                        window.location.href = "{:U('Index/index')}";
                     } else {
                         $("#auth_span").click();
                     }

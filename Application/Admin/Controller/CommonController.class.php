@@ -27,21 +27,15 @@ class CommonController extends Controller
 
     /**
      * 初始化登录
-     *
-     * @param bool $isLogin
      */
-    public function initLogin($isLogin = false)
+    public function initLogin()
     {
-        if (!$this->checkLogged()) {
-            if ($this->initCookies()) {  // 从cookie中读取用户名
+        if (!$this->checkLogged()) {    // 检查登录
+            if ($this->initCookies()) {  // 从cookie中读取用户信息
 
-            } else if (!$isLogin) { // 跳转登录
+            } else { // 跳转登录
                 $this->redirect('User/login');
-            } else {    // 显示登录
-                $this->display('User/login');
             }
-        } else if ($isLogin) { // 登录状态则跳转首页
-            $this->redirect('Index/index');
         }
     }
 
@@ -63,7 +57,7 @@ class CommonController extends Controller
     /**
      * 获取cookies中的内容
      */
-    protected function initCookies()
+    public function initCookies()
     {
         if (cookie('login')) {
             $cookies = explode('|', cookie('login'));
@@ -83,6 +77,9 @@ class CommonController extends Controller
     protected function setCookies($cookies)
     {
         cookie('login', implode('|', $cookies));
+        $this->setUser($cookies[0]);
+        $this->setUserId($cookies[1]);
+        $this->setNickname($cookies[2]);
     }
 
     /**
