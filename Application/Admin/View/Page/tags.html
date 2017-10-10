@@ -1,0 +1,157 @@
+<extend name="Public:base"/>
+<block name="title">标签</block>
+<block name="css">
+    <style type="text/css">
+        .dropdown-menu {
+            left: auto;
+            padding: 5px;
+            right: 0;
+        }
+
+        .dropdown-menu input[type='file'] {
+            margin-bottom: 5px;
+            max-width: 200px;
+            color: #333;
+        }
+
+        .dropdown-menu button {
+            float: left;
+            margin-right: 5px;
+        }
+
+        div.alert {
+            padding: 10px;
+            padding-right: 35px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</block>
+
+<block name="main">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    标签
+                </h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        共<span style="margin: 0 3px">{$count}</span>个标签
+                        <div class="dropdown" style="float:right;">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-search fa-fw"></i>
+                                搜索
+                            </a>
+                            <div class="dropdown-menu">
+                                <input class="form-control input-search" type="text" placeholder="搜索...">
+                            </div>
+                            <!-- /.dropdown-user -->
+                        </div>
+                        <!-- /.dropdown -->
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <foreach name="tags" item="tag">
+                            <div class="alert alert-warning alert-dismissable" data-id="{$tag['id']}">
+                                <button type="button" class="close" data-toggle="modal" data-target="#tipsModal">×</button>
+                                <a href="__ROOT__/tag/{$tag['name']}" title="创建时间：{$tag['created_at']}"
+                                   class="alert-link">{$tag['name']}（{$tag['count']}）</a>
+                            </div>
+                        </foreach>
+                    </div>
+                    <!-- /.panel-body --> </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+</block>
+
+<block name="model">
+    <!-- tips模态框（Modal） -->
+    <div class="modal fade" id="tipsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body" id="tipsContent">
+                    确认删除此标签？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="tipsCancel">取消</button>
+                    <button type="button" class="btn btn-primary" id="tipsSure">确认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</block>
+
+<block name="script">
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript">
+        $(function () {
+            // 搜索
+            $(".panel-heading span").html($("div.alert-dismissable").length);
+            $(".input-search").keyup(function () {
+                var text = $(this).val();
+                $("div.alert-dismissable").hide().filter(":contains('" + text + "')").show();
+
+                // 更新当前标签数量
+                $(".panel-heading span").html($("div.alert-dismissable[style='display: inline-block;']").length);
+            });
+
+
+            // 删除
+            var id = 0;
+            $(document).on('click', '.close', function () {
+                id = $(this).parent().attr("data-id");
+//                console.log('逗你的，只是为了好看，并没有写删除功能^-^');
+            });
+            // 取消
+            $("#tipsCancel").click(function () {
+                id = 0;
+            });
+            // 确定
+            $("#tipsSure").click(function () {
+                $("#loadDiv").show();
+                $.ajax({
+                    url: "{:U('Tags/delete')}",
+                    type: "post",
+                    data: {id: id},
+                    success: function (data) {
+                        $("#loadDiv").hide();
+                        showTips(data.msg);
+
+                        if (data.status > 0) {
+                            $("div.alert-dismissable[data-id='" + id + "']").remove();
+                            // 更新当前标签数量
+                            $(".input-search").keyup();
+                        }
+                        $("#tipsCancel").click();
+                    }
+                });
+            });
+
+
+            // 覆盖旧contains函数
+            jQuery.expr[':'].contains = function (a, i, m) {
+                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+            };
+        });
+    </script>
+</block>

@@ -13,23 +13,20 @@
  * @copyright Copyright(C)2016 Wuhu Yichuan Network Technology Corporation Ltd. All rights reserved.
  */
 
-namespace Home\Controller;
+namespace Admin\Controller;
 
 
-class LinkController extends BaseController
+class LinkController extends CommonController
 {
     /**
      * 友链
      */
     public function index()
     {
-        $this->initLogged(false);
-
-
         // 获取友链列表
         $links = M('Links')
-            ->field('created_at,updated_at', true)
-            ->where(array('user_id' => $this->getUserId()))
+            ->field('created_at', true)
+            ->where(array('user_id' => session('user_id')))
             ->order('id ASC')
             ->select();
 
@@ -43,24 +40,13 @@ class LinkController extends BaseController
      */
     public function create()
     {
-        $this->initLogged();
+        $data = I('post./a');
+        $id = $data['link_id'];
+        unset($data['link_id']);
 
-        $id = I('post.link_id/d');
-        $title = I('post.title');
-        $url = I('post.url');
-        $intro = I('post.intro');
-        $ajaxData['status'] = 0;
-        if ((empty($id) && $id != 0) || empty($title) || empty($url)) {
-            $ajaxData['msg'] = '参数有误';
-            $this->ajaxReturn($ajaxData);
-        }
-
-
-        // 封装数据并验证
-        $data['title'] = $title;
-        $data['url'] = $url;
-        $data['intro'] = $intro;
+        // 验证
         $Link = D('Links');
+        $ajaxData['status'] = 0;
         if (!$Link->create($data)) {
             $ajaxData['msg'] = $Link->getError();   // 返回错误状态
             $this->ajaxReturn($ajaxData, 'JSON');
@@ -79,7 +65,6 @@ class LinkController extends BaseController
             } else {
                 $ajaxData['msg'] = '新增成功';
             }
-
         } else {    // 编辑
             $where['id'] = $id;
             $where['user_id'] = $userId;
@@ -107,8 +92,6 @@ class LinkController extends BaseController
      */
     public function delete()
     {
-        $this->initLogged();
-
         $id = I('post.link_id/d');
         $ajaxData['status'] = 0;
         if (empty($id)) {

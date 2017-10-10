@@ -13,17 +13,15 @@
  * @author xiaomo<xiaomo@nixiaomo.com>
  */
 
-namespace Home\Controller;
+namespace Admin\Controller;
 
-class CommentController extends BaseController
+class CommentController extends CommonController
 {
     /**
      * 消息中心
      */
     public function index()
     {
-        $this->initLogged();
-
         $Comment = M('Comments')->alias('c');
         $userId = session('user_id');
         // 自己文章的一级评论
@@ -69,14 +67,14 @@ class CommentController extends BaseController
         // 参数验证
         $ajaxData['status'] = 0;
         if (empty($postId) || (empty($parentId) && $parentId != 0) || empty($code) || empty($comment)) {
-            $ajaxData['info'] = '参数有误';
+            $ajaxData['msg'] = '参数有误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
 
         // 判断验证码
-        if (!$this->checkVerify($code)) {
-            $ajaxData['info'] = '验证码错误';
+        if (!check_verify($code)) {
+            $ajaxData['msg'] = '验证码错误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
@@ -118,7 +116,7 @@ class CommentController extends BaseController
         // 验证数据
         $Comment = D('Comments');
         if (!$Comment->create($data)) {
-            $ajaxData['info'] = $Comment->getError();   // 返回错误状态
+            $ajaxData['msg'] = $Comment->getError();   // 返回错误状态
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
@@ -126,10 +124,10 @@ class CommentController extends BaseController
         // 响应
         $result = $Comment->add($data);
         if (!$result) {
-            $ajaxData['info'] = $result;
+            $ajaxData['msg'] = $result;
         } else {
             $ajaxData['status'] = 1;
-            $ajaxData['info'] = '评论成功！';
+            $ajaxData['msg'] = '评论成功！';
         }
         $this->ajaxReturn($ajaxData, 'JSON');
     }
@@ -140,13 +138,11 @@ class CommentController extends BaseController
      */
     public function remove()
     {
-        $this->checkLogged();
-
         $comment_id = I('request.comment_id/d');
         // 参数验证
         $ajaxData['status'] = 0;
         if (empty($comment_id)) {
-            $ajaxData['info'] = '参数有误';
+            $ajaxData['msg'] = '参数有误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
@@ -157,10 +153,10 @@ class CommentController extends BaseController
         // 响应
         if (!empty(I('post.comment_id/d'))) {  // post，Index/detail
             if (!$result) {
-                $ajaxData['info'] = $result;
+                $ajaxData['msg'] = $result;
             } else {
                 $ajaxData['status'] = 1;
-                $ajaxData['info'] = '删除成功！';
+                $ajaxData['msg'] = '删除成功！';
             }
             $this->ajaxReturn($ajaxData, 'JSON');
 
@@ -175,13 +171,12 @@ class CommentController extends BaseController
      */
     public function batch()
     {
-        $this->checkLogged();
         $marks = I('post.marks/d');
         $status = I('post.status');
         // 参数验证
         $ajaxData['status'] = 0;
         if (empty($marks) || empty($status)) {
-            $ajaxData['info'] = '参数有误';
+            $ajaxData['msg'] = '参数有误';
             $this->ajaxReturn($ajaxData, 'JSON');
         }
 
@@ -194,7 +189,7 @@ class CommentController extends BaseController
             $sql .= "END WHERE `comment_id` IN ($marks)";
 
             $ajaxData['status'] = M()->execute($sql);
-            $ajaxData['info'] = '已标记为已读';
+            $ajaxData['msg'] = '已标记为已读';
 
         } else if ($status == "remove") {   // 批量删除
             $userWhere['comment_respond|user'] = session('user');
@@ -202,10 +197,10 @@ class CommentController extends BaseController
             $where['_logic'] = 'or';
 
             $ajaxData['status'] = M("comment")->where($where)->delete();
-            $ajaxData['info'] = '删除成功';
+            $ajaxData['msg'] = '删除成功';
 
         } else {
-            $ajaxData['info'] = '参数有误';
+            $ajaxData['msg'] = '参数有误';
         }
 
         $this->ajaxReturn($ajaxData, 'JSON');

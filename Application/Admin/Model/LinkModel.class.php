@@ -5,7 +5,7 @@
  * @author xiaomo<xiaomo@nixiaomo.com>
  */
 
-namespace Home\Model;
+namespace Admin\Model;
 
 
 use Think\Model;

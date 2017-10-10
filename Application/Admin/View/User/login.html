@@ -14,14 +14,8 @@
     <!-- Bootstrap Core CSS -->
     <link href="__PUBLIC__/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
-    <link href="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="__PUBLIC__/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="__PUBLIC__/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- My CSS-->
     <link href="__PUBLIC__/css/style.css" rel="stylesheet">
@@ -42,7 +36,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-primary">
                 <div class="panel-heading">
-                    请登录 <a href="{:U('User/register')}" style="float:right;color: #ddd;">免费注册</a>
+                    请登录 <a href="__ROOT__/register" style="float:right;color: #ddd;">免费注册</a>
                 </div>
                 <div class="panel-body">
                     <form role="form" id="form">
@@ -59,7 +53,7 @@
                                 <input class="form-control" placeholder="验证码" name="code" type="text"
                                        id="code" maxlength="4">
                                 <span class="input-group-addon" id="auth_span"
-                                      style="background-image: url('{:U("User/get_verify")}')">
+                                      style="background-image: url('{:U("User/getVerify")}')">
                                 </span>
                             </div>
                             <a href="javascript:;" class="btn btn-lg btn-primary btn-block" id="login">登 录</a>
@@ -71,19 +65,13 @@
     </div>
 </div>
 
-<include file="Public:tips,Public:loading"/>
+<include file="Common@Public/tips,Common@Public/loading"/>
 
 <!-- jQuery -->
 <script src="__PUBLIC__/bower_components/jquery/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="__PUBLIC__/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="__PUBLIC__/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="__PUBLIC__/dist/js/sb-admin-2.js"></script>
 
 <script type="text/javascript">
     $(function () {
@@ -122,7 +110,7 @@
 
         // 获取验证码
         $("#auth_span").click(function () {
-            document.getElementById('auth_span').style.backgroundImage = 'url({:U("User/get_verify")}?rand=' +
+            document.getElementById('auth_span').style.backgroundImage = 'url({:U("User/getVerify")}?rand=' +
                     Math.random() + ')';
             $("#code").val("");
         });

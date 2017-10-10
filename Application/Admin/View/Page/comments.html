@@ -61,7 +61,7 @@
                                                 {$comment['title']}
                                             </if>
                                         </td>
-                                        <td>{$comment['comment_date']|strtotime|date='Y-m-d H:i',###}</td>
+                                        <td>{$comment['comment_date']}</td>
                                         <td>
                                             <span class="fa fa-search"></span>
                                             <php>
@@ -144,7 +144,7 @@
                         status: status
                     },
                     success: function (data) {
-                        showTips(data.info);
+                        showTips(data.msg);
                         $("#loadDiv").hide();
 
                         if (data.status > 0)

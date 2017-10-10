@@ -7,104 +7,47 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="__ROOT__/index.html">
+        <a class="navbar-brand" href="__ROOT__/index">
             <img class="navbar-logo" src="__PUBLIC__/images/logo.png"/>{$Think.config.PROJECT_NAME}</a>
     </div>
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <if condition="session('user')">
-            <li class="dropdown">
-                <php>$messages = pushed_comment();</php>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell fa-fw"></i>
-                    <if condition="($count = count($messages)) gt 0">
-                        <span style="color: #f00">{$count}</span>
-                    </if>
-                    <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-messages">
-                    <if condition="$count gt 0">
-                        <volist name="messages" id="message" offset="0" length="5">
-                            <li>
-                                <a href="__ROOT__/p/{$message['post_id']}/comment/{$message['comment_id']}#comment-{$message['comment_id']}">
-                                    <div>
-                                        <span class="pushed-user">{$message['comment_author']}</span>
-                                        <if condition="$message['comment_parent'] eq 0">
-                                            评论了
-                                            <else/>
-                                            回复了
-                                        </if>
-                                        <if condition="$message['comment_respond'] eq session('user')">
-                                            你
-                                            <else/>
-                                            <span style="color: #c00; margin-left: 5px">{$message['comment_respond']}</span>
-                                        </if>
-                                        <span class="pull-right text-muted">
-                                            <em>{$message['comment_date']|strtotime|date='m-d H:i',###}</em>
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <if condition="mb_strlen($message['content'],'utf8') gt 35">
-                                            {$message['content']|mb_substr=0,35,'utf-8'}...
-                                            <else/>
-                                            {$message['content']}
-                                        </if>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                        </volist>
-                        <else/>
-                        <li><a class="text-center">您目前没有新消息</a></li>
-                        <li class="divider"></li>
-                    </if>
-                    <li>
-                        <a class="text-center" href="{:U('Comment/index')}">
-                            <strong>查看所有消息</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-messages -->
-            </li>
-        </if>
-        <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>
+                <i class="fa fa-user fa-fw"></i>{$Think.session.user}
                 <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-messages dropdown-admin">
-                <if condition="session('user')">
+                <notempty name="Think.session.user">
                     <li>
-                        <a href="#">
+                        <a href="__ROOT__/admin">
                             <i class="fa fa-user fa-fw"></i>
-                            个人设置
+                            进入后台
                         </a>
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="{:U('User/logout')}">
+                        <a href="__ROOT__/logout">
                             <i class="fa fa-sign-out fa-fw"></i>
                             退出账户
                         </a>
                     </li>
                     <else/>
                     <li>
-                        <a href="{:U('User/register')}">
+                        <a href="__ROOT__/register">
                             <i class="fa fa-user fa-fw"></i>
                             注册
                         </a>
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="{:U('User/login')}">
+                        <a href="__ROOT__/login">
                             <i class="fa fa-sign-in fa-fw"></i>
                             登录
                         </a>
                     </li>
-                </if>
+                </notempty>
             </ul>
             <!-- /.dropdown-user -->
         </li>
@@ -133,52 +76,30 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="__ROOT__/index.html">
+                    <a href="__ROOT__/index">
                         <i class="fa fa-home"></i> 首页
                     </a>
                 </li>
                 <li>
-                    <a href="__ROOT__/archives.html">
+                    <a href="__ROOT__/archives">
                         <i class="fa fa-inbox"></i> 收纳盒
                     </a>
                 </li>
                 <li>
-                    <a href="__ROOT__/tags.html">
+                    <a href="__ROOT__/tags">
                         <i class="fa fa-tag"></i> 便利贴
                     </a>
                 </li>
                 <li>
-                    <a href="__ROOT__/links.html">
+                    <a href="__ROOT__/links">
                         <i class="fa fa-link"></i> 传送门
                     </a>
                 </li>
                 <li>
-                    <a href="__ROOT__/about.html">
+                    <a href="__ROOT__/about">
                         <i class="fa fa-user"></i> 呼哈嘿！
                     </a>
                 </li>
-                <notempty name="Think.session.user_id">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-bookmark"></i> 个人日志
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{:U('Post/index')}">所有日志</a>
-                            </li>
-                            <li>
-                                <a href="{:U('Post/add')}">新建</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="{:U('Comment/index')}">
-                            <i class="fa fa-comment"></i> 消息中心
-                        </a>
-                    </li>
-                </notempty>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

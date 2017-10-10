@@ -164,7 +164,7 @@
                             </div>
                             <div class="form-group input-group" style="width: 100%;">
                                 <span class="input-group-addon" id="auth_span"
-                                      style="background-image: url('{:U("User/get_verify")}')">
+                                      style="background-image: url('{:U("Admin/User/getVerify")}')">
                                 </span>
                                 <input class="form-control" placeholder="验证码" name="code" type="text"
                                        id="code" maxlength="4">
@@ -282,7 +282,7 @@
 
             // 获取验证码
             $("#auth_span").click(function () {
-                document.getElementById('auth_span').style.backgroundImage = 'url({:U("User/get_verify")}?rand=' +
+                document.getElementById('auth_span').style.backgroundImage = 'url({:U("Admin/User/getVerify")}?rand=' +
                         Math.random() + ')';
                 $("#code").val("");
             });

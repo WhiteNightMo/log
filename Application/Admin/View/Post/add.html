@@ -220,11 +220,10 @@
                         status: status
                     },
                     success: function (data) {
+                        $("#loadDiv").hide();
+                        showTips(data.msg);
                         if (data.status > 0) {
-                            window.location.href = data.info;
-                        } else {
-                            showTips(data.info);
-                            $("#loadDiv").hide();
+                            window.location.href = data.url;
                         }
                     }
                 });

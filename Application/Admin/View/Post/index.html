@@ -31,7 +31,7 @@
                             <switch name="count['status']">
                                 <case value="1">
                                     <li>
-                                        <a href="__ROOT__/post_status/publish"
+                                        <a href="__ROOT__/posts/publish"
                                            {$_GET['post_status']=='publish'?'class="current"':''}>
                                         已发布<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -39,7 +39,7 @@
                                 </case>
                                 <case value="2">
                                     <li>
-                                        <a href="__ROOT__/post_status/draft"
+                                        <a href="__ROOT__/posts/draft"
                                            {$_GET['post_status']=='draft'?'class="current"':''}>
                                         草稿<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -47,7 +47,7 @@
                                 </case>
                                 <case value="3">
                                     <li>
-                                        <a href="__ROOT__/post_status/trash"
+                                        <a href="__ROOT__/posts/trash"
                                            {$_GET['post_status']=='trash'?'class="current"':''}>
                                         回收站<span class="count">（{$count['total']}）</span>
                                         </a>
@@ -73,7 +73,7 @@
                                 <tbody>
                                 <foreach name="logs" item="log">
                                     <tr id="post-{$log['id']}">
-                                        <td>{$log['edit_date']|strtotime|date='Y-m-d H:i',###}</td>
+                                        <td>{$log['edit_date']}</td>
                                         <td>
                                             <if condition="mb_strlen($log['title'],'utf8') gt 12">
                                                 {$log['title']|mb_substr=0,12,'utf-8'}...

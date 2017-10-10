@@ -38,27 +38,22 @@ return array(
     /* 路由 */
     'URL_ROUTER_ON' => true,  // 开启路由
     'URL_ROUTE_RULES' => array(
-        // 文章
-        'p/:p\d$' => array('Index/detail'),
-        'p/:p\d/comment/:comment\d$' => array('Index/detail'),
-        // 文章管理
-        'post_status/:post_status' => array('Post/index'),
-        // 搜索
-        's/:s\s$' => array('Index/index'),
-        // 标签
-        'tag/:tag\s$' => array('Index/index'),
-        // 作者
-        'author/:author$' => array('Index/index'),
+        // 登录注册
+        'login' => array('Admin/User/login'),
+        'register' => array('Admin/User/register'),
+        'logout' => array('Admin/User/logout'),
 
-        // 登录
-        'login' => array('User/login'),
-        // 归档
-        'archives' => array('Archive/index'),
+        /*// 评论
+        'admin/comments' => array('Admin/Comment/index'),
         // 标签
-        'tags$' => array('Tags/index'),
+        'admin/tags' => array('Admin/Tags/index'),
         // 友链
-        'links' => array('Link/index'),
-        // 关于
-        'about' => array('Archive/about'),
+        'admin/links' => array('Admin/Link/index'),
+        // 文章管理
+        'admin/posts$' => array('Admin/Post/index'),
+        'admin/posts/add$' => array('Admin/Post/add'),
+        'admin/posts/edit' => array('Admin/Post/edit'),
+        'admin/posts/:post_status$' => array('Admin/Post/index'),*/
+        'posts/:post_status' => array('Post/index'),
     ),
 );
