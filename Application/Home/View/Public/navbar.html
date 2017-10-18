@@ -65,8 +65,7 @@
                                 <i class="fa fa-github"></i>
                             </a>
                         </span>
-                        <input type="text" class="form-control input-search"
-                               value="{$Think.get.s}" placeholder="站内搜索...">
+                        <input type="text" class="form-control input-search" placeholder="站内搜索...">
                         <span class="input-group-btn">
                             <button class="btn btn-default btn-search" type="button">
                                 <i class="fa fa-search"></i>
@@ -107,17 +106,30 @@
     <!-- /.navbar-static-side -->
 </nav>
 <script type="text/javascript">
-    $(".input-search").bind('keypress', function (event) {
-        if (event.keyCode == "13") {
-            $(".btn-search").click();
+    $(function () {
+        $(".input-search").bind('keypress', function (event) {
+            if (event.keyCode == "13") {
+                $(".btn-search").click();
+            }
+        });
+        $(".btn-search").click(function () {
+            var s = $(".input-search").val();
+            if ($.trim(s).length < 3) {
+                showTips('请最少输入三个有效字符');
+                return;
+            }
+            window.location.href = '__ROOT__/s/' + s;
+        });
+
+
+        $(".input-search").val(htmlspecialchars_decode("{:htmlspecialchars($_GET['s'])}"));
+        function htmlspecialchars_decode(str) {
+            str = str.replace(/&amp;/g, '&');
+            str = str.replace(/&lt;/g, '<');
+            str = str.replace(/&gt;/g, '>');
+            str = str.replace(/&quot;/g, "''");
+            str = str.replace(/&#039;/g, "'");
+            return str;
         }
-    });
-    $(".btn-search").click(function () {
-        var s = $(".input-search").val();
-        if ($.trim(s) == '' || $.trim(s).length < 3) {
-            showTips('请最少输入三个有效字符');
-            return;
-        }
-        window.location.href = '__ROOT__/s/' + s;
     });
 </script>
