@@ -1,6 +1,8 @@
 <?php
 /**
  * 首页控制器
+ *
+ * @author xiaomo<i@nixiaomo.com>
  */
 namespace Admin\Controller;
 

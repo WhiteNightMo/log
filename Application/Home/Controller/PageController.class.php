@@ -14,8 +14,6 @@
 namespace Home\Controller;
 
 
-use Common\Controller\CommonController;
-
 class PageController extends CommonController
 {
     /**

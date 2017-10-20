@@ -10,7 +10,7 @@
  *      remove：删除评论
  *      batch：批量操作
  *
- * @author xiaomo<xiaomo@nixiaomo.com>
+ * @author xiaomo<i@nixiaomo.com>
  */
 
 namespace Admin\Controller;

@@ -2,7 +2,7 @@
 /**
  * Comment模型
  *
- * @author xiaomo<xiaomo@nixiaomo.com>
+ * @author xiaomo<i@nixiaomo.com>
  */
 
 namespace Admin\Model;

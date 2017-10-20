@@ -1,6 +1,6 @@
 <?php
 /**
- * 公共控制器
+ * Common模块公共控制器
  *
  * 方法：
  *      initLogin：初始化登录
@@ -9,7 +9,7 @@
  *      setCookies：设置cookies
  *      getUserId：获取user_id
  *
- * @author xiaomo<xiaomo@nixiaomo.com>
+ * @author xiaomo<i@nixiaomo.com>
  */
 
 namespace Common\Controller;
@@ -32,12 +32,10 @@ class CommonController extends Controller
      */
     public function initLogin()
     {
-        if (!$this->checkLogged()) {    // 检查登录
-            if ($this->initCookies()) {  // 从cookie中读取用户信息
-
-            } else { // 跳转登录
-                $this->redirect('User/login');
-            }
+        // 检查登录 && 从cookie中读取用户信息
+        if (!$this->checkLogged() && !$this->initCookies()) {
+            // 跳转登录
+            $this->redirect('User/login');
         }
     }
 
@@ -47,7 +45,7 @@ class CommonController extends Controller
      *
      * @return bool
      */
-    private function checkLogged()
+    public function checkLogged()
     {
         if (session('user') && session('user_id') && session('nickname')) {
             return true;

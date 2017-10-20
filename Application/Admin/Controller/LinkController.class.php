@@ -9,8 +9,7 @@
  *      create：新增/编辑
  *      delete：删除
  *
- * @author xiaomo<xiaomo@etlinker.com>
- * @copyright Copyright(C)2016 Wuhu Yichuan Network Technology Corporation Ltd. All rights reserved.
+ * @author xiaomo<i@nixiaomo.com>
  */
 
 namespace Admin\Controller;

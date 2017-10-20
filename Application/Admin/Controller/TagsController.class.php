@@ -16,7 +16,7 @@
 namespace Admin\Controller;
 
 
-class TagsController extends CommentController
+class TagsController extends CommonController
 {
     /**
      * 标签

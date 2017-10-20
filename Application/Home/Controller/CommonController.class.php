@@ -1,10 +1,10 @@
 <?php
 /**
- * Admin模块公共控制器
+ * Home模块公共控制器
  *
  * @author xiaomo<i@nixiaomo.com>
  */
-namespace Admin\Controller;
+namespace Home\Controller;
 
 
 class CommonController extends \Common\Controller\CommonController
@@ -14,6 +14,8 @@ class CommonController extends \Common\Controller\CommonController
      */
     public function _initialize()
     {
-        $this->initLogin();
+        if (!$this->checkLogged()) {
+            $this->initCookies();
+        }
     }
 }
