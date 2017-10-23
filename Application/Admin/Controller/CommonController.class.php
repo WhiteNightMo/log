@@ -7,7 +7,9 @@
 namespace Admin\Controller;
 
 
-class CommonController extends \Common\Controller\CommonController
+use Common\Controller\BaseController;
+
+class CommonController extends BaseController
 {
     /**
      * 初始化函数

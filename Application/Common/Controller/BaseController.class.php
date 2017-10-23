@@ -17,7 +17,7 @@ namespace Common\Controller;
 
 use Think\Controller;
 
-class CommonController extends Controller
+class BaseController extends Controller
 {
     /**
      * 初始化函数

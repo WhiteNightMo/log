@@ -254,7 +254,7 @@
 
                 $("#loadDiv").show();
                 $.ajax({
-                    url: "{:U('Comment/post')}",
+                    url: "{:U('Admin/Comment/post')}",
                     type: "post",
                     data: {
                         post: "{$log['id']}",
@@ -303,7 +303,7 @@
                 $("#tipsSure").click(function () {
                     $("#loadDiv").show();
                     $.ajax({
-                        url: "{:U('Comment/remove')}",
+                        url: "{:U('Admin/Comment/remove')}",
                         type: "post",
                         data: {comment_id: commentId},
                         success: function (data) {
