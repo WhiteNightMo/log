@@ -34,6 +34,10 @@ return array(
     'COOKIE_PREFIX' => 'log_', // Cookie 名称前缀
     'COOKIE_EXPIRE' => 3600 * 24 * 7, // Cookie 保存时间
 
+    // 百度地图服务端AK
+    'BD_LOCATION_AK' => '9G6DGU9tnhZolfgss31VdXz7ZDCTrNOu',
+    // 百度地图服务端url地址
+    'BD_LOCATION_URL' => 'http://api.map.baidu.com/location/ip?ak=%s&ip=%s&coor=bd09ll',
 
     /* 路由 */
     'URL_ROUTER_ON' => true,  // 开启路由

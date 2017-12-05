@@ -24,8 +24,22 @@ class BaseController extends Controller
      */
     public function _initialize()
     {
+        $referer = $_SERVER['HTTP_REFERER'];
+        $urls = [
+            'fsdstar.com',
+            'thishere.cn',
+            'youngfish.cn'
+        ];
+        foreach ($urls as $url) {
+            if (stripos($referer, $url) !== false) {
+                // 包含
+                logger('referer：' . $referer);
+                break;
+            } else {
+                // 不包含
+            }
+        }
     }
-
 
     /**
      * 初始化登录
