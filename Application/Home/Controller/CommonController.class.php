@@ -16,6 +16,8 @@ class CommonController extends BaseController
      */
     public function _initialize()
     {
+        parent::_initialize();
+
         if (!$this->checkLogged()) {
             $this->initCookies();
         }
